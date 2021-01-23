@@ -7,7 +7,7 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = project.archives_base_name
-version = project.mod_version
+version = "${project.mod_version}+${project.minecraft_version}"
 group = project.maven_group
 
 dependencies {
@@ -57,9 +57,7 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 }
 
 jar {
-	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}"}
-	}
+    from "LICENSE.txt"
 }
 
 // configure the maven publication

@@ -7,7 +7,7 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = project.archives_base_name
-version = project.mod_version
+version = "${project.mod_version}+${project.minecraft_version}"
 group = project.maven_group
 
 dependencies {
@@ -33,10 +33,6 @@ if (project.use_dev_mods) {
     }
 
     dependencies {
-        // This greatly reduces the amount of time needed to start the game, but is generally unsafe in production
-        modRuntime ("com.github.SuperCoder7979:databreaker:${project.databreaker_version}") {
-            transitive = false
-        }
 		modRuntime ("io.github.prospector:modmenu:${project.modmenu_version}")
     }
 }

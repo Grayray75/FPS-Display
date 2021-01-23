@@ -53,9 +53,7 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 }
 
 jar {
-	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}"}
-	}
+    from "LICENSE.txt"
 }
 
 // configure the maven publication

@@ -17,10 +17,10 @@ public class InGameHudMixin {
 
         if (!client.options.debugEnabled) {
 
-            String displayString = ((MinecraftClientMixin) client).getCurrentFPS() + " fps";
+            String displayString = ((MinecraftClientMixin) client).getCurrentFPS() + " FPS";
             float textPosX = 2;
             float textPosY = 2;
-            int textColor = 0xeeeeee;
+            int textColor = 0xDDEEEEEE;
 
             client.textRenderer.draw(matrixStack, displayString, textPosX, textPosY, textColor);
         }

@@ -1,5 +1,5 @@
 # FPS-Display
-A **Fabric** mod to show your ingame FPS
+A **Fabric** mod to show your current FPS on screen.
 
 ## Downloads:
 You can download this mod from:

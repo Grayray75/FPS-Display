@@ -2,5 +2,6 @@
     "text.autoconfig.fpsdisplay.title": "FPS-Display",
     "text.autoconfig.fpsdisplay.option.enabled": "Aktiv",
     "text.autoconfig.fpsdisplay.option.drawWithShadows": "Textschatten",
-    "text.autoconfig.fpsdisplay.option.textColor": "Text Farbe"
+    "text.autoconfig.fpsdisplay.option.textColor": "Text Farbe",
+    "text.autoconfig.fpsdisplay.option.textAlpha": "Text Sichtbarkeit"
 }

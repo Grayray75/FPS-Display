@@ -19,12 +19,12 @@ public class InGameHudMixin {
         MinecraftClient client = MinecraftClient.getInstance();
         FpsDisplayConfig config = AutoConfig.getConfigHolder(FpsDisplayConfig.class).getConfig();
 
-        if (!client.options.debugEnabled && config.enabled) {
+        if (!client.options.debugEnabled && config.enabled && config.textAlpha > 3) {
 
             String displayString = ((MinecraftClientMixin) client).getCurrentFPS() + " FPS";
             float textPosX = 2;
             float textPosY = 2;
-            int textColor = config.textColor;
+            int textColor = ((config.textAlpha & 0xFF) << 24) | config.textColor;
 
             if (config.drawWithShadows) {
                 client.textRenderer.drawWithShadow(matrixStack, displayString, textPosX, textPosY, textColor);

@@ -8,9 +8,12 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 public class FpsDisplayConfig implements ConfigData {
 
     public boolean enabled = true;
-    
+
     public boolean drawWithShadows = false;
 
     @ConfigEntry.ColorPicker
     public int textColor = 0xEEEEEE;
+
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 255)
+    public int textAlpha = 230;
 }

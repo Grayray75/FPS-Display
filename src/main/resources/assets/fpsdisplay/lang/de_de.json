@@ -3,5 +3,7 @@
     "text.autoconfig.fpsdisplay.option.enabled": "Aktiv",
     "text.autoconfig.fpsdisplay.option.drawWithShadows": "Textschatten",
     "text.autoconfig.fpsdisplay.option.textColor": "Text Farbe",
-    "text.autoconfig.fpsdisplay.option.textAlpha": "Text Sichtbarkeit"
+    "text.autoconfig.fpsdisplay.option.textAlpha": "Text Sichtbarkeit",
+    "key.fpsdisplay.category": "FPS-Display",
+    "key.fpsdisplay.toggleFpsOverlay": "FPS overlay umschalten"
 }

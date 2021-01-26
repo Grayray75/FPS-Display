@@ -17,4 +17,4 @@ Minecraft version: | Support:
 1.14.x | ❌ Unsupported
 1.8.9 | ⚠️ Maintence*
 
-_*_ only bug fixes, new features come only when I have enough time.
+_*_ bug fixes only, new features only come when I have enough time.

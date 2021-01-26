@@ -24,7 +24,7 @@ public class InGameHudMixin {
             String displayString = ((MinecraftClientMixin) client).getCurrentFPS() + " FPS";
             float textPosX = 2;
             float textPosY = 2;
-            int textColor = 0xDDEEEEEE;
+            int textColor = config.textColor;
 
             if (config.drawWithShadows) {
                 client.textRenderer.drawWithShadow(matrixStack, displayString, textPosX, textPosY, textColor);

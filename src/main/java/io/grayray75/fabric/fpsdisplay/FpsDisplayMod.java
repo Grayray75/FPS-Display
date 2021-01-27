@@ -6,7 +6,7 @@ import net.fabricmc.api.EnvType;
 import org.apache.logging.log4j.LogManager;
 
 @Environment(EnvType.CLIENT)
-public class ClientInit implements ClientModInitializer {
+public class FpsDisplayMod implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {

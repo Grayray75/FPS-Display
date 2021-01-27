@@ -17,7 +17,7 @@
     "environment": "client",
     "entrypoints": {
         "client": [
-            "io.grayray75.fabric.fpsdisplay.ClientInit"
+            "io.grayray75.fabric.fpsdisplay.FpsDisplayMod"
         ]
     },
     "mixins": [

@@ -1,0 +1,9 @@
+{
+    "text.autoconfig.fpsdisplay.title": "FPS-Display",
+    "text.autoconfig.fpsdisplay.option.enabled": "Enabled",
+    "text.autoconfig.fpsdisplay.option.drawWithShadows": "Text shadows",
+    "text.autoconfig.fpsdisplay.option.textColor": "Text color",
+    "text.autoconfig.fpsdisplay.option.textAlpha": "Text visibility",
+    "key.fpsdisplay.category": "FPS-Display",
+    "key.fpsdisplay.toggleFpsOverlay": "Toggle FPS overlay"
+}

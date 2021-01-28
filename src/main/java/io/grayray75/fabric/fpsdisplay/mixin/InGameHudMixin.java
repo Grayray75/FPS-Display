@@ -7,8 +7,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import io.grayray75.fabric.fpsdisplay.FpsDisplayMod;
 import io.grayray75.fabric.fpsdisplay.config.FpsDisplayConfig;
-import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
@@ -16,9 +16,9 @@ public class InGameHudMixin {
     @Inject(at = @At("TAIL"), method = "render")
     public void render(float tickDelta, CallbackInfo info) {
         MinecraftClient client = MinecraftClient.getInstance();
-        FpsDisplayConfig config = AutoConfig.getConfigHolder(FpsDisplayConfig.class).getConfig();
+        FpsDisplayConfig config = FpsDisplayMod.CONFIG;
 
-        if (!client.options.debugEnabled && config.enabled && config.textAlpha > 3) {
+        if (!client.options.debugEnabled && config.enabled && config.textAlpha > 3 && FpsDisplayMod.SHOW_FPS_OVERLAY) {
 
             String displayString = ((MinecraftClientMixin) client).getCurrentFPS() + " FPS";
             float textPosX = 2;

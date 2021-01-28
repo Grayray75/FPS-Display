@@ -14,6 +14,4 @@ Minecraft version: | Support:
 1.16.x | ✔️ Active
 1.15.x | ✔️ Active
 1.14.x | ❌ Unsupported
-1.8.9  | ⚠️ Maintence*
-
-_*_ bug fixes only!
+1.8.9  | ⚠️ Maintence (bug fixes only)

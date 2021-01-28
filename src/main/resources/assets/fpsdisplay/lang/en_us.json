@@ -4,6 +4,7 @@
     "text.autoconfig.fpsdisplay.option.drawWithShadows": "Text shadows",
     "text.autoconfig.fpsdisplay.option.textColor": "Text color",
     "text.autoconfig.fpsdisplay.option.textAlpha": "Text visibility",
+    "text.autoconfig.fpsdisplay.option.holdKeyToShowFps": "'Hold key to show fps' Mode",
     "key.fpsdisplay.category": "FPS-Display",
     "key.fpsdisplay.toggleFpsOverlay": "Toggle FPS overlay"
 }

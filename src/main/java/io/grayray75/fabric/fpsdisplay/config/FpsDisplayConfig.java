@@ -16,4 +16,6 @@ public class FpsDisplayConfig implements ConfigData {
 
     @ConfigEntry.BoundedDiscrete(min = 0, max = 255)
     public int textAlpha = 230;
+
+    public boolean holdKeyToShowFps = false;
 }

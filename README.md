@@ -8,13 +8,12 @@ You can download this mod from:
 * [Modrinth](https://modrinth.com/mod/fpsdisplay)
 
 ## Supported versions:
-
 Minecraft version: | Support:
 ------------------ | --------
 1.17.x | ❔ When 1.17 official releases
 1.16.x | ✔️ Active
-1.15.x | ⚠️ Maintence*
+1.15.x | ✔️ Active
 1.14.x | ❌ Unsupported
-1.8.9 | ⚠️ Maintence*
+1.8.9  | ⚠️ Maintence*
 
-_*_ bug fixes only, new features only come when I have enough time.
+_*_ bug fixes only!

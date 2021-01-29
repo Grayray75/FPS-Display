@@ -19,7 +19,7 @@ public class FpsDisplayMod implements ClientModInitializer {
 	public void onInitializeClient() {
 		LogManager.getLogger().info("Initializing FPS-Display Mod");
 
-		KeyBinding binding_toggleOverlay = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.fpsdisplay.toggleFpsOverlay", Keyboard.KEY_NONE, "key.fpsdisplay.category"));
+		KeyBinding binding_toggleOverlay = KeyBindingHelper.registerKeyBinding(new KeyBinding("Toggle FPS overlay", Keyboard.KEY_NONE, "FPS-Display"));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (binding_toggleOverlay.wasPressed()) {

@@ -18,29 +18,28 @@ import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 @Environment(EnvType.CLIENT)
 public class FpsDisplayMod implements ClientModInitializer {
 
-	public static Boolean SHOW_FPS_OVERLAY;
-	public static FpsDisplayConfig CONFIG;
+    public static Boolean SHOW_FPS_OVERLAY;
+    public static FpsDisplayConfig CONFIG;
 
-	@Override
-	public void onInitializeClient() {
-		LogManager.getLogger().info("Initializing FPS-Display Mod");
+    @Override
+    public void onInitializeClient() {
+        LogManager.getLogger().info("Initializing FPS-Display Mod");
 
-		AutoConfig.register(FpsDisplayConfig.class, GsonConfigSerializer::new);
-		CONFIG = AutoConfig.getConfigHolder(FpsDisplayConfig.class).getConfig();
-		SHOW_FPS_OVERLAY = CONFIG.enabled;
+        AutoConfig.register(FpsDisplayConfig.class, GsonConfigSerializer::new);
+        CONFIG = AutoConfig.getConfigHolder(FpsDisplayConfig.class).getConfig();
+        SHOW_FPS_OVERLAY = CONFIG.enabled;
 
-		KeyBinding binding_toggleOverlay = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.fpsdisplay.toggleFpsOverlay", InputUtil.Type.KEYSYM, GLFW.GLFW_DONT_CARE, "key.fpsdisplay.category"));
+        KeyBinding binding_toggleOverlay = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.fpsdisplay.toggleFpsOverlay", InputUtil.Type.KEYSYM, GLFW.GLFW_DONT_CARE, "key.fpsdisplay.category"));
 
-		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-			while (binding_toggleOverlay.wasPressed() && !CONFIG.holdKeyToShowFps) {
-				CONFIG.enabled = !CONFIG.enabled;
-				//SHOW_FPS_OVERLAY = CONFIG.enabled;
-			}
-			if (CONFIG.holdKeyToShowFps) {
-				SHOW_FPS_OVERLAY = binding_toggleOverlay.isPressed();
-			} else {
-				SHOW_FPS_OVERLAY = CONFIG.enabled;
-			}
-		});
-	}
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            while (binding_toggleOverlay.wasPressed() && !CONFIG.holdKeyToShowFps) {
+                CONFIG.enabled = !CONFIG.enabled;
+            }
+            if (CONFIG.holdKeyToShowFps) {
+                SHOW_FPS_OVERLAY = binding_toggleOverlay.isPressed();
+            } else {
+                SHOW_FPS_OVERLAY = CONFIG.enabled;
+            }
+        });
+    }
 }

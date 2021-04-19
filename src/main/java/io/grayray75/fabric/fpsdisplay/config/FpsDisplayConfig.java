@@ -18,10 +18,10 @@ public class FpsDisplayConfig implements ConfigData {
     public int textAlpha = 230;
 
     @ConfigEntry.BoundedDiscrete(min = 0, max = 200)
-    public int verticalPosition = 0;
+    public int verticalPosition = 2;
 
     @ConfigEntry.BoundedDiscrete(min = 0, max = 200)
-    public int horizontalPosition = 0;
+    public int horizontalPosition = 2;
 
     public boolean holdKeyToShowFps = false;
 }

@@ -1,4 +1,4 @@
-name: Gradle Error Checker
+name: Gradle CI
 
 on: [ push, pull_request ]
 

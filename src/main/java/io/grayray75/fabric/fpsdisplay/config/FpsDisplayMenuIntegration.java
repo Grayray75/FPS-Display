@@ -10,4 +10,9 @@ public class FpsDisplayMenuIntegration implements ModMenuApi {
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
         return parent -> AutoConfig.getConfigScreen(FpsDisplayConfig.class, parent).get();
     }
+
+    @Override
+    public String getModId() {
+        return "fpsdisplay";
+    }
 }

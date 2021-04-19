@@ -4,6 +4,8 @@
     "text.autoconfig.fpsdisplay.option.drawWithShadows": "Textschatten",
     "text.autoconfig.fpsdisplay.option.textColor": "Textfarbe",
     "text.autoconfig.fpsdisplay.option.textAlpha": "Textsichtbarkeit",
+    "text.autoconfig.fpsdisplay.option.verticalPosition": "Vertikale Position",
+    "text.autoconfig.fpsdisplay.option.horizontalPosition": "Horizontale Position",
     "text.autoconfig.fpsdisplay.option.holdKeyToShowFps": "'Taste halten für FPS-Anzeige'-Modus",
     "key.fpsdisplay.category": "FPS-Display",
     "key.fpsdisplay.toggleFpsOverlay": "FPS Overlay umschalten"

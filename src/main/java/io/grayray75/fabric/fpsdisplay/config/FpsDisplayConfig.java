@@ -17,9 +17,9 @@ public class FpsDisplayConfig implements ConfigData {
     @ConfigEntry.BoundedDiscrete(min = 0, max = 255)
     public int textAlpha = 230;
 
-    public int offsetTop = 2;
+    public int offsetTop = 4;
 
-    public int offsetLeft = 2;
+    public int offsetLeft = 4;
 
     public boolean holdKeyToShowFps = false;
 }

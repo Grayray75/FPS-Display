@@ -20,8 +20,15 @@ public class InGameHudMixin {
         if (!client.options.debugEnabled && config.enabled && config.textAlpha > 3 && FpsDisplayMod.SHOW_FPS_OVERLAY) {
 
             String displayString = ((MinecraftClientMixin) client).getCurrentFPS() + " FPS";
-            float textPosX = ((client.getWindow().getScaledWidth() - client.textRenderer.getStringWidth(displayString) - 2)) * ((float) config.horizontalPosition / 200f) + 2;
-            float textPosY = ((client.getWindow().getScaledHeight() - client.textRenderer.fontHeight) - 2) * ((float) config.verticalPosition / 200f) + 2;
+            float textPosX = config.offsetLeft;
+            float textPosY = config.offsetTop;
+
+            double guiScale = client.getWindow().getScaleFactor();
+            if (guiScale > 0) {
+                textPosX /= guiScale;
+                textPosY /= guiScale;
+            }
+
             int textColor = ((config.textAlpha & 0xFF) << 24) | config.textColor;
 
             if (config.drawWithShadows) {

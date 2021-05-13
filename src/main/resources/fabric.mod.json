@@ -20,7 +20,7 @@
             "io.grayray75.fabric.fpsdisplay.FpsDisplayMod"
         ],
         "modmenu": [
-            "io.grayray75.fabric.fpsdisplay.config.FpsDisplayMenuIntegration"
+            "io.grayray75.fabric.fpsdisplay.config.ModMenuIntegration"
         ]
     },
     "mixins": [

@@ -11,7 +11,8 @@ public class FpsDisplayConfig implements ConfigData {
 
     public boolean drawWithShadows = false;
 
-    @ConfigEntry.ColorPicker
+    // Unfortunately there is no ColorPicker in this version and I have no clue how to create one.
+    // @ConfigEntry.ColorPicker
     public int textColor = 0xEEEEEE;
 
     @ConfigEntry.BoundedDiscrete(min = 0, max = 255)

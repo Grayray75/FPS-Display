@@ -4,7 +4,6 @@ import io.grayray75.fabric.fpsdisplay.FpsDisplayMod;
 import io.grayray75.fabric.fpsdisplay.config.FpsDisplayConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
-import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -14,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class InGameHudMixin {
 
     @Inject(at = @At("TAIL"), method = "render")
-    public void render(MatrixStack matrixStack, float tickDelta, CallbackInfo info) {
+    public void render(float tickDelta, CallbackInfo info) {
         MinecraftClient client = MinecraftClient.getInstance();
         FpsDisplayConfig config = FpsDisplayMod.CONFIG;
 
@@ -24,7 +23,7 @@ public class InGameHudMixin {
             float textPosX = config.offsetLeft;
             float textPosY = config.offsetTop;
 
-            double guiScale = client.getWindow().getScaleFactor();
+            double guiScale = client.window.getScaleFactor();
             if (guiScale > 0) {
                 textPosX /= guiScale;
                 textPosY /= guiScale;
@@ -33,9 +32,9 @@ public class InGameHudMixin {
             int textColor = ((config.textAlpha & 0xFF) << 24) | config.textColor;
 
             if (config.drawWithShadows) {
-                client.textRenderer.drawWithShadow(matrixStack, displayString, textPosX, textPosY, textColor);
+                client.textRenderer.drawWithShadow(displayString, textPosX, textPosY, textColor);
             } else {
-                client.textRenderer.draw(matrixStack, displayString, textPosX, textPosY, textColor);
+                client.textRenderer.draw(displayString, textPosX, textPosY, textColor);
             }
         }
     }

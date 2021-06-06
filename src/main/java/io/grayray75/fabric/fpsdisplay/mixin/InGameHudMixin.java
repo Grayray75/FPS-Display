@@ -30,8 +30,8 @@ public class InGameHudMixin {
             }
 
             // Prevent FPS-Display to render outside screenspace
-            float maxTextPosX = client.getWindow().getScaledWidth() - client.textRenderer.getWidth(displayString);
-            float maxTextPosY = client.getWindow().getScaledHeight() - client.textRenderer.fontHeight;
+            float maxTextPosX = client.window.getScaledWidth() - client.textRenderer.getStringWidth(displayString);
+            float maxTextPosY = client.window.getScaledHeight() - client.textRenderer.fontHeight;
             textPosX = Math.min(textPosX, maxTextPosX);
             textPosY = Math.min(textPosY, maxTextPosY);
 

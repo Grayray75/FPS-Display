@@ -10,8 +10,8 @@ You can download this mod from:
 ## Supported versions:
 Minecraft version: | Support:
 ------------------ | --------
-1.17.x | ❔ When 1.17 official releases
+1.17.x | ✔️ Active
 1.16.x | ✔️ Active
 1.15.x | ✔️ Active
-1.14.x | ❌ Unsupported
+1.14.x | ✔️ Active
 1.8.9  | ⚠️ Maintence (bug fixes only)

@@ -24,7 +24,9 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    includeFabricApiModule "fabric-key-binding-api-v1"
+    includeFabricApiModule "fabric-lifecycle-events-v1"
+
     modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"
 
     modApi("me.shedaniel.cloth:config-2:${project.cloth_config_version}") {
@@ -44,6 +46,12 @@ dependencies {
     modRuntime("com.github.SuperCoder7979:databreaker:0.2.6") {
         transitive = false
     }
+}
+
+def includeFabricApiModule(String moduleName) {
+    Object dependency = fabricApi.module(moduleName, project.fabric_version)
+    dependencies.modImplementation(dependency)
+    dependencies.include(dependency)
 }
 
 processResources {

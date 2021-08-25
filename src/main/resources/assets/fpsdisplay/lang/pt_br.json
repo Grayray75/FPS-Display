@@ -1,0 +1,12 @@
+{
+    "text.autoconfig.fpsdisplay.title": "FPS-Display",
+    "text.autoconfig.fpsdisplay.option.enabled": "Ativado",
+    "text.autoconfig.fpsdisplay.option.drawWithShadows": "Sombreamento do texto",
+    "text.autoconfig.fpsdisplay.option.textColor": "Cor do texto",
+    "text.autoconfig.fpsdisplay.option.textAlpha": "Visibilidade do texto",
+    "text.autoconfig.fpsdisplay.option.offsetTop": "Deslocamento no topo",
+    "text.autoconfig.fpsdisplay.option.offsetLeft": "Deslocamento na esquerda",
+    "text.autoconfig.fpsdisplay.option.holdKeyToShowFps": "Modo 'segure a tecla para exibir'",
+    "key.fpsdisplay.category": "FPS-Display",
+    "key.fpsdisplay.toggleFpsOverlay": "Mostrar/ocultar sobreposição da taxa de quadros"
+}

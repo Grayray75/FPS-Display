@@ -1,8 +1,10 @@
 package io.grayray75.fabric.fpsdisplay.mixin;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import io.grayray75.fabric.fpsdisplay.FpsDisplayMod;
 import io.grayray75.fabric.fpsdisplay.config.FpsDisplayConfig;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.hud.InGameHud;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -37,11 +39,21 @@ public class InGameHudMixin {
 
             int textColor = ((config.textAlpha & 0xFF) << 24) | config.textColor;
 
-            if (config.drawWithShadows) {
-                client.textRenderer.drawWithShadow(displayString, textPosX, textPosY, textColor);
-            } else {
-                client.textRenderer.draw(displayString, textPosX, textPosY, textColor);
-            }
+            this.renderText(client.textRenderer, displayString, textPosX, textPosY, textColor, config.textSize, config.drawWithShadows);
         }
+    }
+
+    private void renderText(TextRenderer textRenderer, String text, float x, float y, int color, float scale, boolean shadowed) {
+        GlStateManager.pushMatrix();
+        GlStateManager.translatef(x, y, 0);
+        GlStateManager.scalef(scale, scale, scale);
+        GlStateManager.translatef(-x, -y, 0);
+
+        if (shadowed) {
+            textRenderer.drawWithShadow(text, x, y, color);
+        } else {
+            textRenderer.draw(text, x, y, color);
+        }
+        GlStateManager.popMatrix();
     }
 }

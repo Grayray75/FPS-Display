@@ -27,7 +27,7 @@
         "fpsdisplay.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=0.9.0",
+        "fabricloader": ">=0.12.0",
         "minecraft": "1.15.x",
         "fabric-key-binding-api-v1": "*",
         "fabric-lifecycle-events-v1": "*"

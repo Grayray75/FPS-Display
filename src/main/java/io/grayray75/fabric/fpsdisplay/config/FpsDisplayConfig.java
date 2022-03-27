@@ -11,6 +11,8 @@ public class FpsDisplayConfig implements ConfigData {
 
     public boolean drawWithShadows = false;
 
+	public float textSize = 1;
+
     @ConfigEntry.ColorPicker
     public int textColor = 0xEEEEEE;
 

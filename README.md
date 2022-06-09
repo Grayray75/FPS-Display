@@ -10,6 +10,7 @@ You can download this mod from:
 ## Supported versions:
 Minecraft version: | Support:
 ------------------ | --------
+1.19.x | ✔️ Active
 1.18.x | ✔️ Active
 1.17.x | ✔️ Active
 1.16.x | ✔️ Active

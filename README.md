@@ -16,4 +16,4 @@ Minecraft version: | Support:
 1.16.x | ✔️ Active
 1.15.x | ✔️ Active
 1.14.x | ✔️ Active
-1.8.9  | ❌ Currently Broken
+1.8.9  | ⚠️ WIP

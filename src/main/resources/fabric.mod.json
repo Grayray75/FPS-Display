@@ -18,18 +18,13 @@
     "entrypoints": {
         "client": [
             "io.grayray75.fabric.fpsdisplay.FpsDisplayMod"
-        ],
-        "modmenu": [
-            "io.grayray75.fabric.fpsdisplay.config.ModMenuIntegration"
         ]
     },
     "mixins": [
         "fpsdisplay.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=0.12.0",
-        "minecraft": "1.16.x",
-        "fabric-key-binding-api-v1": "*",
-        "fabric-lifecycle-events-v1": "*"
+        "fabricloader": ">=0.14.0",
+        "minecraft": "1.8.9"
     }
 }

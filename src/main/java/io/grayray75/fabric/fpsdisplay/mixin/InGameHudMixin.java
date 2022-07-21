@@ -1,11 +1,13 @@
 package io.grayray75.fabric.fpsdisplay.mixin;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import io.grayray75.fabric.fpsdisplay.FpsDisplayMod;
+import io.grayray75.fabric.fpsdisplay.config.ConfigManager;
 import io.grayray75.fabric.fpsdisplay.config.FpsDisplayConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.hud.InGameHud;
-import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.util.Window;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -15,45 +17,46 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class InGameHudMixin {
 
     @Inject(at = @At("TAIL"), method = "render")
-    public void render(MatrixStack matrixStack, float tickDelta, CallbackInfo info) {
+    public void render(float tickDelta, CallbackInfo info) {
         MinecraftClient client = MinecraftClient.getInstance();
-        FpsDisplayConfig config = FpsDisplayMod.CONFIG;
+        FpsDisplayConfig config = ConfigManager.getConfig();
 
         if (!client.options.debugEnabled && config.enabled && config.textAlpha > 3 && FpsDisplayMod.SHOW_FPS_OVERLAY) {
 
             String displayString = ((MinecraftClientMixin) client).getCurrentFPS() + " FPS";
-            float textPosX = config.offsetLeft;
-            float textPosY = config.offsetTop;
+            int textPosX = config.offsetLeft;
+            int textPosY = config.offsetTop;
 
-            double guiScale = client.getWindow().getScaleFactor();
+            Window window = new Window(client);
+            double guiScale = window.getScaleFactor();
             if (guiScale > 0) {
                 textPosX /= guiScale;
                 textPosY /= guiScale;
             }
 
             // Prevent FPS-Display to render outside screenspace
-            float maxTextPosX = client.getWindow().getScaledWidth() - client.textRenderer.getWidth(displayString);
-            float maxTextPosY = client.getWindow().getScaledHeight() - client.textRenderer.fontHeight;
+            int maxTextPosX = (int) window.getScaledWidth() - client.textRenderer.getStringWidth(displayString);
+            int maxTextPosY = (int) window.getScaledHeight() - client.textRenderer.fontHeight;
             textPosX = Math.min(textPosX, maxTextPosX);
             textPosY = Math.min(textPosY, maxTextPosY);
 
             int textColor = ((config.textAlpha & 0xFF) << 24) | config.textColor;
 
-            this.renderText(matrixStack, client.textRenderer, displayString, textPosX, textPosY, textColor, config.textSize, config.drawWithShadows);
+            this.renderText(client.textRenderer, displayString, textPosX, textPosY, textColor, config.textSize, config.drawWithShadows);
         }
     }
 
-    private void renderText(MatrixStack matrixStack, TextRenderer textRenderer, String text, float x, float y, int color, float scale, boolean shadowed) {
-        matrixStack.push();
-        matrixStack.translate(x, y, 0);
-        matrixStack.scale(scale, scale, scale);
-        matrixStack.translate(-x, -y, 0);
+    private void renderText(TextRenderer textRenderer, String text, int x, int y, int color, float scale, boolean shadowed) {
+        GlStateManager.pushMatrix();
+        GlStateManager.translatef(x, y, 0);
+        GlStateManager.scalef(scale, scale, scale);
+        GlStateManager.translatef(-x, -y, 0);
 
         if (shadowed) {
-            textRenderer.drawWithShadow(matrixStack, text, x, y, color);
+            textRenderer.drawWithShadow(text, x, y, color);
         } else {
-            textRenderer.draw(matrixStack, text, x, y, color);
+            textRenderer.draw(text, x, y, color);
         }
-        matrixStack.pop();
+        GlStateManager.popMatrix();
     }
 }

@@ -9,5 +9,5 @@
     "text.autoconfig.fpsdisplay.option.offsetLeft": "Distancia desde la izquierda",
     "text.autoconfig.fpsdisplay.option.holdKeyToShowFps": "Modo \"presiona una tecla para mostrar\"",
     "key.fpsdisplay.category": "FPS-Display",
-    "key.fpsdisplay.toggleFpsOverlay": "Conmutar el texto de FPS"
+    "key.fpsdisplay.toggleFpsOverlay": "Conmutar el superposición de FPS"
 }

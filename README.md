@@ -1,11 +1,12 @@
 # FPS-Display
-A **Fabric** mod to show your current FPS on screen.
+A **Fabric** mod that shows your current FPS on screen.
+
+![](./media/showcase/fps-counter.png)
 
 ## Downloads:
 You can download this mod from:
-* [GitHub Releases](https://github.com/Grayray75/FPS-Display/releases)
-* [CurseForge](https://www.curseforge.com/minecraft/mc-mods/fpsdisplay)
 * [Modrinth](https://modrinth.com/mod/fpsdisplay)
+* [CurseForge](https://www.curseforge.com/minecraft/mc-mods/fpsdisplay)
 
 ## Supported versions:
 Minecraft version: | Support:

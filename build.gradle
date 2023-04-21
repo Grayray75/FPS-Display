@@ -83,7 +83,7 @@ publishing {
 def ENV = System.getenv()
 
 def getShortMcVersion() {
-    return project.minecraft_version.substring(0, 4)
+    return project.minecraft_version.substring(0, 6)
 }
 
 modrinth {

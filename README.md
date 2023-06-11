@@ -11,6 +11,7 @@ You can download this mod from:
 ## Supported versions:
 Minecraft version: | Support:
 ------------------ | --------
+1.20.x | ✔️ Active
 1.19.x | ✔️ Active
 1.18.x | ✔️ Active
 1.17.x | ✔️ Active

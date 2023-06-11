@@ -1,5 +1,5 @@
 plugins {
-    id "fabric-loom" version "1.1-SNAPSHOT"
+    id "fabric-loom" version "1.2-SNAPSHOT"
     id "com.modrinth.minotaur" version "2.+"
     id "com.matthewprenger.cursegradle" version "1.4.0"
     id "maven-publish"
@@ -83,7 +83,7 @@ publishing {
 def ENV = System.getenv()
 
 def getShortMcVersion() {
-    return project.minecraft_version.substring(0, 6)
+    return project.minecraft_version.substring(0, 4)
 }
 
 modrinth {
@@ -95,7 +95,7 @@ modrinth {
     versionType = "release"
     
     uploadFile = remapJar
-    gameVersions = ["1.19.4"]
+    gameVersions = ["1.20.0"]
     loaders = ["fabric"]
 }
 

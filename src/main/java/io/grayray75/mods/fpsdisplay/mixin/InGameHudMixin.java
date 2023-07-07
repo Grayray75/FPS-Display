@@ -1,7 +1,8 @@
-package io.grayray75.fabric.fpsdisplay.mixin;
+package io.grayray75.mods.fpsdisplay.mixin;
 
-import io.grayray75.fabric.fpsdisplay.FpsDisplayMod;
-import io.grayray75.fabric.fpsdisplay.config.FpsDisplayConfig;
+import io.grayray75.mods.fpsdisplay.FpsDisplayMod;
+import io.grayray75.mods.fpsdisplay.config.Config;
+import io.grayray75.mods.fpsdisplay.config.ConfigManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
@@ -14,13 +15,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
-
     @Inject(at = @At("TAIL"), method = "render")
     public void render(DrawContext context, float tickDelta, CallbackInfo info) {
         MinecraftClient client = MinecraftClient.getInstance();
-        FpsDisplayConfig config = FpsDisplayMod.CONFIG;
+        Config config = ConfigManager.getConfig();
 
-        if (!client.options.debugEnabled && config.enabled && config.textAlpha > 3 && FpsDisplayMod.SHOW_FPS_OVERLAY) {
+        if (!client.options.debugEnabled && config.enabled && config.textAlpha > 3 && FpsDisplayMod.ShowOverlay) {
 
             String displayString = ((MinecraftClientMixin) client).getCurrentFPS() + " FPS";
             int textPosX = config.offsetLeft;
@@ -40,7 +40,7 @@ public class InGameHudMixin {
 
             int textColor = ((config.textAlpha & 0xFF) << 24) | config.textColor;
 
-            this.renderText(context, client.textRenderer, displayString, textPosX, textPosY, textColor, config.textSize, config.drawWithShadows);
+            this.renderText(context, client.textRenderer, displayString, textPosX, textPosY, textColor, config.textSize, config.textShadows);
         }
     }
 

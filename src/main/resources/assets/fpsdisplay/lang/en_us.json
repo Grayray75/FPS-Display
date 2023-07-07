@@ -1,13 +1,15 @@
 {
-    "text.autoconfig.fpsdisplay.title": "FPS-Display",
-    "text.autoconfig.fpsdisplay.option.enabled": "Enabled",
-    "text.autoconfig.fpsdisplay.option.drawWithShadows": "Text shadows",
-    "text.autoconfig.fpsdisplay.option.textSize": "Text size",
-    "text.autoconfig.fpsdisplay.option.textColor": "Text color",
-    "text.autoconfig.fpsdisplay.option.textAlpha": "Text visibility",
-    "text.autoconfig.fpsdisplay.option.offsetTop": "Top offset",
-    "text.autoconfig.fpsdisplay.option.offsetLeft": "Left offset",
-    "text.autoconfig.fpsdisplay.option.holdKeyToShowFps": "'Hold key to show fps' Mode",
+    "text.fpsdisplay.options.fallback_title": "FPS-Display Settings Fallback",
+    "text.fpsdisplay.options.fallback_message": "Please install 'Cloth Config API' in order to access the option menu",
+    "text.fpsdisplay.options.title": "FPS-Display Settings",
+    "text.fpsdisplay.options.enabled": "Enabled",
+    "text.fpsdisplay.options.textSize": "Text size",
+    "text.fpsdisplay.options.textColor": "Text color",
+    "text.fpsdisplay.options.textAlpha": "Text visibility",
+    "text.fpsdisplay.options.textShadows": "Text shadows",
+    "text.fpsdisplay.options.offsetTop": "Top offset",
+    "text.fpsdisplay.options.offsetLeft": "Left offset",
+    "text.fpsdisplay.options.keybindMode": "Keybind Mode",
     "key.fpsdisplay.category": "FPS-Display",
-    "key.fpsdisplay.toggleFpsOverlay": "Toggle FPS overlay"
+    "key.fpsdisplay.toggleOverlay": "Toggle FPS overlay"
 }

@@ -1,5 +1,5 @@
 plugins {
-    id "fabric-loom" version "1.2-SNAPSHOT"
+    id "fabric-loom" version "1.3-SNAPSHOT"
     id "com.modrinth.minotaur" version "2.+"
     id "com.matthewprenger.cursegradle" version "1.4.0"
     id "maven-publish"
@@ -9,7 +9,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = project.archives_base_name
-version = "${project.mod_version}+${project.minecraft_version}"
+version = project.mod_version
 group = project.maven_group
 
 repositories {
@@ -30,9 +30,6 @@ dependencies {
     modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
     modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
-        exclude(group: "net.fabricmc.fabric-api")
-    }
-    include("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
         exclude(group: "net.fabricmc.fabric-api")
     }
 }
@@ -66,7 +63,6 @@ jar {
     from "LICENSE.txt"
 }
 
-// Configure the maven publication
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -74,28 +70,25 @@ publishing {
         }
     }
 
-    // To publish to maven local use the task `publishToMavenLocal`.
     repositories {
-        // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+        // mavenLocal()
     }
 }
 
 def ENV = System.getenv()
 
-def getShortMcVersion() {
-    return project.minecraft_version.substring(0, 4)
-}
+def shortMinecraftVersion = "1.20"
 
 modrinth {
     token = ENV.MODRINTH_TOKEN
 
     projectId = "DIlqwRFH"
-    versionNumber = "${project.mod_version}+${getShortMcVersion()}"
-    versionName = "[${getShortMcVersion()}] FPS-Display v${project.mod_version}"
+    versionNumber = "${project.mod_version}"
+    versionName = "[${shortMinecraftVersion}] FPS-Display v${project.mod_version}"
     versionType = "release"
     
     uploadFile = remapJar
-    gameVersions = ["1.20"]
+    gameVersions = ["1.20", "1.20.1"]
     loaders = ["fabric"]
 }
 
@@ -106,13 +99,13 @@ curseforge {
 
     project {
         id = "440228"
-        changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/commits/"
+        changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/${shortMinecraftVersion}/CHANGELOG.md"
         releaseType = "release"
         addGameVersion "${project.minecraft_version}"
         addGameVersion "Fabric"
 
         mainArtifact(remapJar) {
-            displayName = "[${getShortMcVersion()}] FPS-Display v${project.mod_version}"
+            displayName = "[${shortMinecraftVersion}] FPS-Display v${project.mod_version}"
         }
 
         afterEvaluate {

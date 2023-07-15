@@ -90,6 +90,10 @@ modrinth {
     uploadFile = remapJar
     gameVersions = ["1.20", "1.20.1"]
     loaders = ["fabric"]
+    dependencies {
+        optional.project "modmenu"
+        optional.project "cloth-config"
+    }
 }
 
 curseforge {
@@ -106,6 +110,10 @@ curseforge {
 
         mainArtifact(remapJar) {
             displayName = "[${shortMinecraftVersion}] FPS-Display v${project.mod_version}"
+            relations {
+                optionalDependency "modmenu"
+                optionalDependency "cloth-config"
+            }
         }
 
         afterEvaluate {

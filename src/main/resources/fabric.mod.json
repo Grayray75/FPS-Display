@@ -33,6 +33,7 @@
         "fabric-lifecycle-events-v1": "*"
     },
     "suggests": {
-        "cloth-config": ">=11.0.0"
+        "cloth-config": ">=11.0.0",
+        "modmenu": ">=7.0.0"
     }
 }

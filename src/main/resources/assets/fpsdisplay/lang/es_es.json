@@ -1,13 +1,11 @@
 {
-    "text.autoconfig.fpsdisplay.title": "FPS-Display",
-    "text.autoconfig.fpsdisplay.option.enabled": "Activado",
-    "text.autoconfig.fpsdisplay.option.drawWithShadows": "Sombras del texto",
-    "text.autoconfig.fpsdisplay.option.textSize": "Tamaño del texto",
-    "text.autoconfig.fpsdisplay.option.textColor": "Color del texto",
-    "text.autoconfig.fpsdisplay.option.textAlpha": "Opacidad del texto",
-    "text.autoconfig.fpsdisplay.option.offsetTop": "Distancia desde la arriba",
-    "text.autoconfig.fpsdisplay.option.offsetLeft": "Distancia desde la izquierda",
-    "text.autoconfig.fpsdisplay.option.holdKeyToShowFps": "Modo \"presiona una tecla para mostrar\"",
+    "text.fpsdisplay.options.enabled": "Activado",
+    "text.fpsdisplay.options.textSize": "Tamaño del texto",
+    "text.fpsdisplay.options.textColor": "Color del texto",
+    "text.fpsdisplay.options.textAlpha": "Opacidad del texto",
+    "text.fpsdisplay.options.textShadows": "Sombras del texto",
+    "text.fpsdisplay.options.offsetTop": "Distancia desde la arriba",
+    "text.fpsdisplay.options.offsetLeft": "Distancia desde la izquierda",
     "key.fpsdisplay.category": "FPS-Display",
     "key.fpsdisplay.toggleFpsOverlay": "Conmutar el superposición de FPS"
 }

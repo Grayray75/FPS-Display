@@ -1,5 +1,5 @@
 {
-    "text.fpsdisplay.options.fallback_title": "FPS-Display Settings Fallback",
+    "text.fpsdisplay.options.fallback_title": "FPS-Display Settings Notice",
     "text.fpsdisplay.options.fallback_message": "Please install 'Cloth Config API' in order to access the option menu",
     "text.fpsdisplay.options.title": "FPS-Display Settings",
     "text.fpsdisplay.options.enabled": "Enabled",
@@ -12,5 +12,5 @@
     "text.fpsdisplay.options.offsetLeft": "Left offset",
     "text.fpsdisplay.options.keybindMode": "Keybind Mode",
     "key.fpsdisplay.category": "FPS-Display",
-    "key.fpsdisplay.toggleOverlay": "Toggle FPS overlay"
+    "key.fpsdisplay.toggleOverlay": "Toggle FPS display"
 }

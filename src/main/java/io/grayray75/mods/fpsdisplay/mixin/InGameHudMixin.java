@@ -26,7 +26,8 @@ public class InGameHudMixin {
                 text = ((MinecraftClientAccessor) client).getCurrentFps() + " FPS";
             }
             else {
-                text = String.format("%d FPS (%d min %d avg %d max)", ((MinecraftClientAccessor) client).getCurrentFps(), FpsDisplayMod.FpsHistory.getMinimum(), FpsDisplayMod.FpsHistory.getAverage(), FpsDisplayMod.FpsHistory.getMaximum());
+                text = String.format("%d FPS (%d min | %d avg | %d max)", ((MinecraftClientAccessor) client).getCurrentFps(),
+                        FpsDisplayMod.FpsHistory.getMinimum(), FpsDisplayMod.FpsHistory.getAverage(), FpsDisplayMod.FpsHistory.getMaximum());
             }
 
             int textPosX = config.offsetLeft;

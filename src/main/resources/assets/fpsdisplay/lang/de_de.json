@@ -1,13 +1,16 @@
 {
-    "text.autoconfig.fpsdisplay.title": "FPS-Display",
-    "text.autoconfig.fpsdisplay.option.enabled": "Aktiv",
-    "text.autoconfig.fpsdisplay.option.drawWithShadows": "Textschatten",
-    "text.autoconfig.fpsdisplay.option.textSize": "Textgröße",
-    "text.autoconfig.fpsdisplay.option.textColor": "Textfarbe",
-    "text.autoconfig.fpsdisplay.option.textAlpha": "Textsichtbarkeit",
-    "text.autoconfig.fpsdisplay.option.offsetTop": "Abstand von oben",
-    "text.autoconfig.fpsdisplay.option.offsetLeft": "Abstand von links",
-    "text.autoconfig.fpsdisplay.option.holdKeyToShowFps": "'Taste halten für FPS-Anzeige'-Modus",
-    "key.fpsdisplay.category": "FPS-Display",
-    "key.fpsdisplay.toggleFpsOverlay": "FPS Overlay umschalten"
+  "text.fpsdisplay.options.fallback_title": "FPS-Display Einstellungen Hinweis",
+  "text.fpsdisplay.options.fallback_message": "Bitte installiere 'Cloth Config API', um auf das Optionsmenü zugreifen zu können",
+  "text.fpsdisplay.options.title": "FPS-Display Einstellungen",
+  "text.fpsdisplay.options.enabled": "Aktiv",
+  "text.fpsdisplay.options.advancedStats": "Zeige min, avg, max FPS",
+  "text.fpsdisplay.options.textSize": "Textgröße",
+  "text.fpsdisplay.options.textColor": "Textfarbe",
+  "text.fpsdisplay.options.textAlpha": "Textsichtbarkeit",
+  "text.fpsdisplay.options.textShadows": "Textschatten",
+  "text.fpsdisplay.options.offsetTop": "Abstand von oben",
+  "text.fpsdisplay.options.offsetLeft": "Abstand von links",
+  "text.fpsdisplay.options.keybindMode": "Tastenkombinations Modus",
+  "key.fpsdisplay.category": "FPS-Display",
+  "key.fpsdisplay.toggleOverlay": "FPS Anzeige umschalten"
 }

@@ -109,6 +109,7 @@ curseforge {
         addGameVersion "1.20"
         addGameVersion "1.20.1"
         addGameVersion "Fabric"
+        addGameVersion "Java 17"
 
         mainArtifact(remapJar) {
             displayName = "[${project.minecraft_version_supported}] FPS-Display v${project.mod_version}"
@@ -125,5 +126,6 @@ curseforge {
 
     options {
         forgeGradleIntegration = false
+        javaVersionAutoDetect = false
     }
 }

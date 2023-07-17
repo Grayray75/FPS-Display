@@ -1,11 +1,12 @@
 # Changelog
 
-## Unreleased
+## v3.0.0
 
-* Added es_es translation. ([#10](https://github.com/Grayray75/FPS-Display/pull/10))
+* Complete rewrite of the mod.
 
 ## v1.5.0
 
+* Added es_es translation. ([#10](https://github.com/Grayray75/FPS-Display/pull/10))
 * Added an option to change the text size. ([#7](https://github.com/Grayray75/FPS-Display/issues/7))
 
 ## v1.4.2

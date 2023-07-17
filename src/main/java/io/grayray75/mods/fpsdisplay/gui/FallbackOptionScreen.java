@@ -13,7 +13,7 @@ public class FallbackOptionScreen extends Screen {
     protected final ConfigData config;
 
     public FallbackOptionScreen(Screen parent) {
-        super(Text.translatable("fpsdisplay.options.fallback_title"));
+        super(Text.translatable("text.fpsdisplay.options.fallback_title"));
         this.parent = parent;
         this.config = ConfigManager.getConfig();
     }
@@ -33,7 +33,7 @@ public class FallbackOptionScreen extends Screen {
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         this.renderBackground(context);
         context.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 20, 0xFFFFFF);
-        context.drawCenteredTextWithShadow(this.textRenderer, Text.translatable("fpsdisplay.options.fallback_message"), this.width / 2, this.height / 2, 0xFFFFFF);
+        context.drawCenteredTextWithShadow(this.textRenderer, Text.translatable("text.fpsdisplay.options.fallback_message"), this.width / 2, this.height / 2, 0xFFFFFF);
         super.render(context, mouseX, mouseY, delta);
     }
 

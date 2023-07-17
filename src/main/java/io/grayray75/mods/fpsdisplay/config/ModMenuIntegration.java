@@ -4,7 +4,6 @@ import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 import io.grayray75.mods.fpsdisplay.gui.ClothOptionScreen;
 import io.grayray75.mods.fpsdisplay.gui.FallbackOptionScreen;
-import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.loader.api.FabricLoader;
 
 public class ModMenuIntegration implements ModMenuApi {

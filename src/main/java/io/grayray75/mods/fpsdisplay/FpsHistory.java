@@ -5,14 +5,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class FpsHistory {
-    private static final int limit = 1000;
+    private static final int LIMIT = 420;
 
-    private final List<Integer> list = new ArrayList<Integer>();
+    private final List<Integer> list = new ArrayList<>();
 
     public void add(int fps) {
         this.list.add(fps);
 
-        if (this.list.size() > 1000) {
+        if (this.list.size() > LIMIT) {
             this.list.remove(0);
         }
     }

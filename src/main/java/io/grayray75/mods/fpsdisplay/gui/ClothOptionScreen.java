@@ -11,7 +11,7 @@ import net.minecraft.text.Text;
 // https://shedaniel.gitbook.io/cloth-config/
 
 public class ClothOptionScreen {
-    public static Screen generateScreen(Screen parent ){
+    public static Screen generateScreen(Screen parent) {
         ConfigBuilder builder = ConfigBuilder.create();
         builder.setParentScreen(parent);
         builder.setTitle(Text.translatable("text.fpsdisplay.options.title"));

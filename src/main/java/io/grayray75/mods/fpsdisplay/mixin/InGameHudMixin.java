@@ -21,12 +21,14 @@ public class InGameHudMixin {
         ConfigData config = ConfigManager.getConfig();
 
         if (!client.options.debugEnabled && config.enabled && config.textAlpha > 3 && FpsDisplayMod.ShowOverlay) {
+            String text;
+            if (!config.advancedStats) {
+                text = ((MinecraftClientAccessor) client).getCurrentFps() + " FPS";
+            }
+            else {
+                text = String.format("%d FPS (%d min %d avg %d max)", ((MinecraftClientAccessor) client).getCurrentFps(), FpsDisplayMod.FpsHistory.getMinimum(), FpsDisplayMod.FpsHistory.getAverage(), FpsDisplayMod.FpsHistory.getMaximum());
+            }
 
-            String displayString = String.format("%d FPS (%d min %d avg %d max)",
-                    ((MinecraftClientAccessor) client).getCurrentFps(),
-                    FpsDisplayMod.FpsHistory.getMinimum(),
-                    FpsDisplayMod.FpsHistory.getAverage(),
-                    FpsDisplayMod.FpsHistory.getMaximum());
             int textPosX = config.offsetLeft;
             int textPosY = config.offsetTop;
 
@@ -37,14 +39,14 @@ public class InGameHudMixin {
             }
 
             // Prevent text to render outside screenspace
-            int maxTextPosX = client.getWindow().getScaledWidth() - client.textRenderer.getWidth(displayString);
+            int maxTextPosX = client.getWindow().getScaledWidth() - client.textRenderer.getWidth(text);
             int maxTextPosY = client.getWindow().getScaledHeight() - client.textRenderer.fontHeight;
             textPosX = Math.min(textPosX, maxTextPosX);
             textPosY = Math.min(textPosY, maxTextPosY);
 
             int textColor = ((config.textAlpha & 0xFF) << 24) | config.textColor;
 
-            this.renderText(context, client.textRenderer, displayString, textPosX, textPosY, textColor, config.textSize, config.textShadows);
+            this.renderText(context, client.textRenderer, text, textPosX, textPosY, textColor, config.textSize, config.textShadows);
         }
     }
 
@@ -57,7 +59,8 @@ public class InGameHudMixin {
             matrixStack.translate(-x, -y, 0);
             context.drawText(textRenderer, text, x, y, color, shadowed);
             matrixStack.pop();
-        } else {
+        }
+        else {
             context.drawText(textRenderer, text, x, y, color, shadowed);
         }
     }

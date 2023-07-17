@@ -41,7 +41,8 @@ public class FpsDisplayMod implements ClientModInitializer {
             }
             if (config.keybindMode == ConfigData.KeyMode.PushToShow) {
                 ShowOverlay = toggleKeybinding.isPressed();
-            } else {
+            }
+            else {
                 ShowOverlay = config.enabled;
             }
         });

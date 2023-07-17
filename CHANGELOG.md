@@ -3,6 +3,12 @@
 ## v3.0.0
 
 * Complete rewrite of the mod.
+* Added advanced FPS stats (min, avg, max).
+* Removed autoconfig dependency.
+
+The mod now has its own config code and no longer uses autoconfig.
+This means that the mod can be used without Cloth Config installed.
+Cloth Config is still required in order to change the mod settings ingame.
 
 ## v1.5.0
 

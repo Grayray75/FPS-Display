@@ -10,7 +10,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = project.archives_base_name
-version = project.mod_version
+version = "${project.mod_version}+${project.minecraft_version_supported}"
 group = project.maven_group
 
 repositories {
@@ -78,15 +78,14 @@ publishing {
 
 def ENV = System.getenv()
 
-def shortMinecraftVersion = "1.20"
-
 modrinth {
     token = ENV.MODRINTH_TOKEN
 
     projectId = "DIlqwRFH"
     versionNumber = "${project.mod_version}"
-    versionName = "[${shortMinecraftVersion}] FPS-Display v${project.mod_version}"
+    versionName = "[${project.minecraft_version_supported}] FPS-Display v${project.mod_version}"
     versionType = "release"
+    changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/v3/CHANGELOG.md"
     
     uploadFile = remapJar
     gameVersions = ["1.20", "1.20.1"]
@@ -104,13 +103,15 @@ curseforge {
 
     project {
         id = "440228"
-        changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/v3/CHANGELOG.md"
         releaseType = "release"
-        addGameVersion "${project.minecraft_version}"
+        changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/v3/CHANGELOG.md"
+        
+        addGameVersion "1.20"
+        addGameVersion "1.20.1"
         addGameVersion "Fabric"
 
         mainArtifact(remapJar) {
-            displayName = "[${shortMinecraftVersion}] FPS-Display v${project.mod_version}"
+            displayName = "[${project.minecraft_version_supported}] FPS-Display v${project.mod_version}"
             relations {
                 optionalDependency "modmenu"
                 optionalDependency "cloth-config"

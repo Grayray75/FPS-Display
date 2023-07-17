@@ -3,7 +3,7 @@
     "text.fpsdisplay.options.fallback_message": "Please install 'Cloth Config API' in order to access the option menu",
     "text.fpsdisplay.options.title": "FPS-Display Settings",
     "text.fpsdisplay.options.enabled": "Enabled",
-    "text.fpsdisplay.options.advancedStats": "Show min, avg, max FPS",
+    "text.fpsdisplay.options.advancedStats": "Show minimal, average and maximal FPS",
     "text.fpsdisplay.options.textSize": "Text size",
     "text.fpsdisplay.options.textColor": "Text color",
     "text.fpsdisplay.options.textAlpha": "Text visibility",

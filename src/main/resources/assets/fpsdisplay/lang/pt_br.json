@@ -6,5 +6,5 @@
     "text.fpsdisplay.options.offsetTop": "Deslocamento no topo",
     "text.fpsdisplay.options.offsetLeft": "Deslocamento na esquerda",
     "key.fpsdisplay.category": "FPS-Display",
-    "key.fpsdisplay.toggleFpsOverlay": "Mostrar/ocultar sobreposição da taxa de quadros"
+    "key.fpsdisplay.toggleOverlay": "Mostrar/ocultar sobreposição da taxa de quadros"
 }

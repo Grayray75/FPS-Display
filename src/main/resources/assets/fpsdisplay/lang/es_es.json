@@ -7,5 +7,5 @@
     "text.fpsdisplay.options.offsetTop": "Distancia desde la arriba",
     "text.fpsdisplay.options.offsetLeft": "Distancia desde la izquierda",
     "key.fpsdisplay.category": "FPS-Display",
-    "key.fpsdisplay.toggleFpsOverlay": "Conmutar el superposición de FPS"
+    "key.fpsdisplay.toggleOverlay": "Conmutar el superposición de FPS"
 }

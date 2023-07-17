@@ -1,7 +1,7 @@
 package io.grayray75.mods.fpsdisplay.mixin;
 
 import io.grayray75.mods.fpsdisplay.FpsDisplayMod;
-import io.grayray75.mods.fpsdisplay.config.Config;
+import io.grayray75.mods.fpsdisplay.config.ConfigData;
 import io.grayray75.mods.fpsdisplay.config.ConfigManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
@@ -18,11 +18,15 @@ public class InGameHudMixin {
     @Inject(at = @At("TAIL"), method = "render")
     public void render(DrawContext context, float tickDelta, CallbackInfo info) {
         MinecraftClient client = MinecraftClient.getInstance();
-        Config config = ConfigManager.getConfig();
+        ConfigData config = ConfigManager.getConfig();
 
         if (!client.options.debugEnabled && config.enabled && config.textAlpha > 3 && FpsDisplayMod.ShowOverlay) {
 
-            String displayString = ((MinecraftClientMixin) client).getCurrentFPS() + " FPS";
+            String displayString = String.format("%d FPS (%d min %d avg %d max)",
+                    ((MinecraftClientAccessor) client).getCurrentFps(),
+                    FpsDisplayMod.FpsHistory.getMinimum(),
+                    FpsDisplayMod.FpsHistory.getAverage(),
+                    FpsDisplayMod.FpsHistory.getMaximum());
             int textPosX = config.offsetLeft;
             int textPosY = config.offsetTop;
 
@@ -32,7 +36,7 @@ public class InGameHudMixin {
                 textPosY /= guiScale;
             }
 
-            // Prevent FPS-Display to render outside screenspace
+            // Prevent text to render outside screenspace
             int maxTextPosX = client.getWindow().getScaledWidth() - client.textRenderer.getWidth(displayString);
             int maxTextPosY = client.getWindow().getScaledHeight() - client.textRenderer.fontHeight;
             textPosX = Math.min(textPosX, maxTextPosX);
@@ -45,14 +49,16 @@ public class InGameHudMixin {
     }
 
     private void renderText(DrawContext context, TextRenderer textRenderer, String text, int x, int y, int color, float scale, boolean shadowed) {
-        MatrixStack matrixStack = context.getMatrices();
-
-        matrixStack.push();
-        matrixStack.translate(x, y, 0);
-        matrixStack.scale(scale, scale, scale);
-        matrixStack.translate(-x, -y, 0);
-
-        context.drawText(textRenderer, text, x, y, color, shadowed);
-        matrixStack.pop();
+        if (scale != 1.0f) {
+            MatrixStack matrixStack = context.getMatrices();
+            matrixStack.push();
+            matrixStack.translate(x, y, 0);
+            matrixStack.scale(scale, scale, scale);
+            matrixStack.translate(-x, -y, 0);
+            context.drawText(textRenderer, text, x, y, color, shadowed);
+            matrixStack.pop();
+        } else {
+            context.drawText(textRenderer, text, x, y, color, shadowed);
+        }
     }
 }

@@ -6,7 +6,7 @@
     "mixins": [],
     "client": [
         "InGameHudMixin",
-        "MinecraftClientMixin"
+        "MinecraftClientAccessor"
     ],
     "injectors": {
         "defaultRequire": 1

@@ -1,6 +1,6 @@
 package io.grayray75.mods.fpsdisplay.gui;
 
-import io.grayray75.mods.fpsdisplay.config.Config;
+import io.grayray75.mods.fpsdisplay.config.ConfigData;
 import io.grayray75.mods.fpsdisplay.config.ConfigManager;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
@@ -19,8 +19,8 @@ public class ClothOptionScreen {
             ConfigManager.saveConfig();
         });
 
-        Config config = ConfigManager.getConfig();
-        Config configDefaults = new Config();
+        final ConfigData configDefaults = new ConfigData();
+        ConfigData config = ConfigManager.getConfig();
 
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
@@ -30,16 +30,21 @@ public class ClothOptionScreen {
                 .setSaveConsumer(newValue -> config.enabled = newValue)
                 .build());
 
+        general.addEntry(entryBuilder.startBooleanToggle(Text.translatable("text.fpsdisplay.options.advancedStats"), config.advancedStats)
+                .setDefaultValue(configDefaults.advancedStats)
+                .setSaveConsumer(newValue -> config.advancedStats = newValue)
+                .build());
+
         general.addEntry(entryBuilder.startFloatField(Text.translatable("text.fpsdisplay.options.textSize"), config.textSize)
                 .setDefaultValue(configDefaults.textSize)
                 .setSaveConsumer(newValue -> config.textSize = newValue)
                 .build());
         general.addEntry(entryBuilder.startColorField(Text.translatable("text.fpsdisplay.options.textColor"), config.textColor)
-                .setDefaultValue(config.textColor)
+                .setDefaultValue(configDefaults.textColor)
                 .setSaveConsumer(newValue -> config.textColor = newValue)
                 .build());
         general.addEntry(entryBuilder.startIntField(Text.translatable("text.fpsdisplay.options.textAlpha"), config.textAlpha)
-                .setDefaultValue(config.textAlpha)
+                .setDefaultValue(configDefaults.textAlpha)
                 .setSaveConsumer(newValue -> config.textAlpha = newValue)
                 .build());
         general.addEntry(entryBuilder.startBooleanToggle(Text.translatable("text.fpsdisplay.options.textShadows"), config.textShadows)
@@ -48,16 +53,16 @@ public class ClothOptionScreen {
                 .build());
 
         general.addEntry(entryBuilder.startIntField(Text.translatable("text.fpsdisplay.options.offsetTop"), config.offsetTop)
-                .setDefaultValue(config.offsetTop)
+                .setDefaultValue(configDefaults.offsetTop)
                 .setSaveConsumer(newValue -> config.offsetTop = newValue)
                 .build());
         general.addEntry(entryBuilder.startIntField(Text.translatable("text.fpsdisplay.options.offsetLeft"), config.offsetLeft)
-                .setDefaultValue(config.offsetLeft)
+                .setDefaultValue(configDefaults.offsetLeft)
                 .setSaveConsumer(newValue -> config.offsetLeft = newValue)
                 .build());
 
-        general.addEntry(entryBuilder.startEnumSelector(Text.translatable("text.fpsdisplay.options.keybindMode"), Config.KeyMode.class, config.keybindMode)
-                .setDefaultValue(config.keybindMode)
+        general.addEntry(entryBuilder.startEnumSelector(Text.translatable("text.fpsdisplay.options.keybindMode"), ConfigData.KeyMode.class, config.keybindMode)
+                .setDefaultValue(configDefaults.keybindMode)
                 .setSaveConsumer(newValue -> config.keybindMode = newValue)
                 .build());
 

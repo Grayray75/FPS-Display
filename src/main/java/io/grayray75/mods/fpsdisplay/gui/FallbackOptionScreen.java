@@ -1,6 +1,6 @@
 package io.grayray75.mods.fpsdisplay.gui;
 
-import io.grayray75.mods.fpsdisplay.config.Config;
+import io.grayray75.mods.fpsdisplay.config.ConfigData;
 import io.grayray75.mods.fpsdisplay.config.ConfigManager;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
@@ -10,7 +10,7 @@ import net.minecraft.text.Text;
 
 public class FallbackOptionScreen extends Screen {
     protected final Screen parent;
-    protected final Config config;
+    protected final ConfigData config;
 
     public FallbackOptionScreen(Screen parent) {
         super(Text.translatable("fpsdisplay.options.fallback_title"));

@@ -15,9 +15,9 @@ public class ConfigManager {
     private static final Logger LOGGER = LogManager.getLogger();
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    private static Config config;
+    private static ConfigData config;
 
-    public static Config getConfig() {
+    public static ConfigData getConfig() {
         return config;
     }
 
@@ -26,10 +26,10 @@ public class ConfigManager {
         return new File(path.toString());
     }
 
-    public static Config loadConfig() {
+    public static ConfigData loadConfig() {
         try {
             BufferedReader br = new BufferedReader(new FileReader(getFilePath()));
-            Config parsed = GSON.fromJson(br, Config.class);
+            ConfigData parsed = GSON.fromJson(br, ConfigData.class);
 
             if (parsed != null) {
                 config = parsed;
@@ -42,7 +42,7 @@ public class ConfigManager {
         }
 
         if (config == null) {
-            config = new Config();
+            config = new ConfigData();
             saveConfig();
         }
 

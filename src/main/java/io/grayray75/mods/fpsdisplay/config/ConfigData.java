@@ -1,8 +1,10 @@
 package io.grayray75.mods.fpsdisplay.config;
 
-public class Config {
+public class ConfigData {
 
     public boolean enabled = true;
+
+    public boolean advancedStats = false;
 
     public float textSize = 1.0f;
     public int textColor = 0xEEEEEE;

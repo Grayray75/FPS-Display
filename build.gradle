@@ -88,7 +88,7 @@ modrinth {
 
     projectId = "DIlqwRFH"
     versionNumber = "${project.mod_version}"
-    versionName = "[${project.minecraft_version_supported}] FPS-Display v${project.mod_version}"
+    versionName = "v${project.mod_version} (${project.minecraft_version_supported})"
     versionType = "release"
     changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/v3/CHANGELOG.md"
 
@@ -117,7 +117,7 @@ curseforge {
         addGameVersion "Java 17"
 
         mainArtifact(remapJar) {
-            displayName = "[${project.minecraft_version_supported}] FPS-Display v${project.mod_version}"
+            displayName = "v${project.mod_version} (${project.minecraft_version_supported})"
             relations {
                 optionalDependency "modmenu"
                 optionalDependency "cloth-config"

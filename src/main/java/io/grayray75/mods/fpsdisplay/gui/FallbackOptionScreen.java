@@ -3,9 +3,8 @@ package io.grayray75.mods.fpsdisplay.gui;
 import io.grayray75.mods.fpsdisplay.config.ConfigData;
 import io.grayray75.mods.fpsdisplay.config.ConfigManager;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.ScreenTexts;
 import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.text.TranslatableText;
 
 public class FallbackOptionScreen extends Screen {
@@ -21,8 +20,8 @@ public class FallbackOptionScreen extends Screen {
     @Override
     protected void init() {
         // create done button
-        ButtonWidget doneButton = new ButtonWidget(this.width / 2 - 100, this.height - 27, 200, 20, ScreenTexts.DONE, (button) -> {
-            this.client.openScreen(this.parent);
+        ButtonWidget doneButton = new ButtonWidget(this.width / 2 - 100, this.height - 27, 200, 20, I18n.translate("gui.done"), (button) -> {
+            this.minecraft.openScreen(this.parent);
         });
         this.addButton(doneButton);
 
@@ -30,15 +29,15 @@ public class FallbackOptionScreen extends Screen {
     }
 
     @Override
-    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        this.renderBackground(matrices);
-        drawCenteredText(matrices, this.textRenderer, this.title, this.width / 2, 20, 0xFFFFFF);
-        drawCenteredText(matrices, this.textRenderer, new TranslatableText("text.fpsdisplay.options.fallback_message"), this.width / 2, this.height / 2, 0xFFFFFF);
-        super.render(matrices, mouseX, mouseY, delta);
+    public void render(int mouseX, int mouseY, float delta) {
+        this.renderBackground();
+        this.drawCenteredString(this.font, this.title.asFormattedString(), this.width / 2, 20, 0xFFFFFF);
+        this.drawCenteredString(this.font, new TranslatableText("text.fpsdisplay.options.fallback_message").asString(), this.width / 2, this.height / 2, 0xFFFFFF);
+        super.render(mouseX, mouseY, delta);
     }
 
     @Override
     public void onClose() {
-        this.client.openScreen(this.parent);
+        this.minecraft.openScreen(this.parent);
     }
 }

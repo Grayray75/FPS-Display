@@ -30,7 +30,7 @@ dependencies {
 
     modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
-    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
+    modApi("me.shedaniel.cloth:config-2:${project.cloth_config_version}") {
         exclude(group: "net.fabricmc.fabric-api")
     }
 }
@@ -92,7 +92,7 @@ modrinth {
     changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/v3/CHANGELOG.md"
 
     uploadFile = remapJar
-    gameVersions = ["1.16", "1.16.1", "1.16.2", "1.16.3", "1.16.4", "1.16.5",]
+    gameVersions = ["1.15", "1.15.1", "1.15.2"]
     loaders = ["fabric"]
     dependencies {
         optional.project "modmenu"
@@ -110,12 +110,9 @@ curseforge {
         releaseType = "release"
         changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/v3/CHANGELOG.md"
 
-        addGameVersion "1.16"
-        addGameVersion "1.16.1"
-        addGameVersion "1.16.2"
-        addGameVersion "1.16.3"
-        addGameVersion "1.16.4"
-        addGameVersion "1.16.5"
+        addGameVersion "1.15"
+        addGameVersion "1.15.1"
+        addGameVersion "1.15.2"
         addGameVersion "Fabric"
         addGameVersion "Java 8"
 

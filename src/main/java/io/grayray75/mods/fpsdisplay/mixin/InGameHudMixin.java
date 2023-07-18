@@ -1,12 +1,12 @@
 package io.grayray75.mods.fpsdisplay.mixin;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import io.grayray75.mods.fpsdisplay.FpsDisplayMod;
 import io.grayray75.mods.fpsdisplay.config.ConfigData;
 import io.grayray75.mods.fpsdisplay.config.ConfigManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.hud.InGameHud;
-import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
     @Inject(at = @At("TAIL"), method = "render")
-    public void render(MatrixStack matrices, float tickDelta, CallbackInfo info) {
+    public void render(float tickDelta, CallbackInfo info) {
         MinecraftClient client = MinecraftClient.getInstance();
         ConfigData config = ConfigManager.getConfig();
 
@@ -39,37 +39,37 @@ public class InGameHudMixin {
             }
 
             // Prevent text to render outside screenspace
-            int maxTextPosX = client.getWindow().getScaledWidth() - client.textRenderer.getWidth(text);
+            int maxTextPosX = client.getWindow().getScaledWidth() - client.textRenderer.getStringWidth(text);
             int maxTextPosY = client.getWindow().getScaledHeight() - client.textRenderer.fontHeight;
             textPosX = Math.min(textPosX, maxTextPosX);
             textPosY = Math.min(textPosY, maxTextPosY);
 
             int textColor = ((config.textAlpha & 0xFF) << 24) | config.textColor;
 
-            this.renderText(matrices, client.textRenderer, text, textPosX, textPosY, textColor, config.textSize, config.textShadows);
+            this.renderText(client.textRenderer, text, textPosX, textPosY, textColor, config.textSize, config.textShadows);
         }
     }
 
-    private void renderText(MatrixStack matrices, TextRenderer textRenderer, String text, int x, int y, int color, float scale, boolean shadowed) {
+    private void renderText(TextRenderer textRenderer, String text, int x, int y, int color, float scale, boolean shadowed) {
         if (scale != 1.0f) {
-            matrices.push();
-            matrices.translate(x, y, 0);
-            matrices.scale(scale, scale, scale);
-            matrices.translate(-x, -y, 0);
+            RenderSystem.pushMatrix();
+            RenderSystem.translatef(x, y, 0);
+            RenderSystem.scalef(scale, scale, scale);
+            RenderSystem.translatef(-x, -y, 0);
 
             if (shadowed) {
-                textRenderer.drawWithShadow(matrices, text, x, y, color);
+                textRenderer.drawWithShadow(text, x, y, color);
             } else {
-                textRenderer.draw(matrices, text, x, y, color);
+                textRenderer.draw(text, x, y, color);
             }
 
-            matrices.pop();
+            RenderSystem.popMatrix();
         }
         else {
             if (shadowed) {
-                textRenderer.drawWithShadow(matrices, text, x, y, color);
+                textRenderer.drawWithShadow(text, x, y, color);
             } else {
-                textRenderer.draw(matrices, text, x, y, color);
+                textRenderer.draw(text, x, y, color);
             }
         }
     }

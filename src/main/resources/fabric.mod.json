@@ -35,5 +35,8 @@
     "suggests": {
         "cloth-config": "*",
         "modmenu": "*"
+    },
+    "custom": {
+        "modmenu:clientsideOnly": true
     }
 }

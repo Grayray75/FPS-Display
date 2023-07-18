@@ -42,10 +42,15 @@ def includeFabricApiModule(String moduleName) {
 }
 
 processResources {
-    inputs.property "version", project.version
+    Map modJsonProperties = Map.of(
+            "version", project.version,
+            "mcversion", project.minecraft_version_supported
+    )
+
+    inputs.properties modJsonProperties
 
     filesMatching("fabric.mod.json") {
-        expand "version": project.version
+        expand modJsonProperties
     }
 }
 
@@ -86,7 +91,7 @@ modrinth {
     versionName = "[${project.minecraft_version_supported}] FPS-Display v${project.mod_version}"
     versionType = "release"
     changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/v3/CHANGELOG.md"
-    
+
     uploadFile = remapJar
     gameVersions = ["1.20", "1.20.1"]
     loaders = ["fabric"]
@@ -105,7 +110,7 @@ curseforge {
         id = "440228"
         releaseType = "release"
         changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/v3/CHANGELOG.md"
-        
+
         addGameVersion "1.20"
         addGameVersion "1.20.1"
         addGameVersion "Fabric"

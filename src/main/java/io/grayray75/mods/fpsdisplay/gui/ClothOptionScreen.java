@@ -43,7 +43,7 @@ public class ClothOptionScreen {
                 .setDefaultValue(configDefaults.textColor)
                 .setSaveConsumer(newValue -> config.textColor = newValue)
                 .build());
-        general.addEntry(entryBuilder.startIntField(Text.translatable("text.fpsdisplay.options.textAlpha"), config.textAlpha)
+        general.addEntry(entryBuilder.startIntSlider(Text.translatable("text.fpsdisplay.options.textAlpha"), config.textAlpha, 0, 255)
                 .setDefaultValue(configDefaults.textAlpha)
                 .setSaveConsumer(newValue -> config.textAlpha = newValue)
                 .build());

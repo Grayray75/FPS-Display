@@ -2,9 +2,9 @@ package io.grayray75.mods.fpsdisplay.gui;
 
 import io.grayray75.mods.fpsdisplay.config.ConfigData;
 import io.grayray75.mods.fpsdisplay.config.ConfigManager;
-import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.Text;
 
@@ -30,11 +30,11 @@ public class FallbackOptionScreen extends Screen {
     }
 
     @Override
-    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        this.renderBackground(context);
-        context.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 20, 0xFFFFFF);
-        context.drawCenteredTextWithShadow(this.textRenderer, Text.translatable("text.fpsdisplay.options.fallback_message"), this.width / 2, this.height / 2, 0xFFFFFF);
-        super.render(context, mouseX, mouseY, delta);
+    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+        this.renderBackground(matrices);
+        drawCenteredTextWithShadow(matrices, this.textRenderer, this.title, this.width / 2, 20, 0xFFFFFF);
+        drawCenteredTextWithShadow(matrices, this.textRenderer, Text.translatable("text.fpsdisplay.options.fallback_message"), this.width / 2, this.height / 2, 0xFFFFFF);
+        super.render(matrices, mouseX, mouseY, delta);
     }
 
     @Override

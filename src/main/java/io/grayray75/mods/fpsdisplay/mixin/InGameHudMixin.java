@@ -5,7 +5,6 @@ import io.grayray75.mods.fpsdisplay.config.ConfigData;
 import io.grayray75.mods.fpsdisplay.config.ConfigManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
-import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
     @Inject(at = @At("TAIL"), method = "render")
-    public void render(DrawContext context, float tickDelta, CallbackInfo info) {
+    public void render(MatrixStack matrices, float tickDelta, CallbackInfo info) {
         MinecraftClient client = MinecraftClient.getInstance();
         ConfigData config = ConfigManager.getConfig();
 
@@ -47,22 +46,31 @@ public class InGameHudMixin {
 
             int textColor = ((config.textAlpha & 0xFF) << 24) | config.textColor;
 
-            this.renderText(context, client.textRenderer, text, textPosX, textPosY, textColor, config.textSize, config.textShadows);
+            this.renderText(matrices, client.textRenderer, text, textPosX, textPosY, textColor, config.textSize, config.textShadows);
         }
     }
 
-    private void renderText(DrawContext context, TextRenderer textRenderer, String text, int x, int y, int color, float scale, boolean shadowed) {
+    private void renderText(MatrixStack matrices, TextRenderer textRenderer, String text, int x, int y, int color, float scale, boolean shadowed) {
         if (scale != 1.0f) {
-            MatrixStack matrixStack = context.getMatrices();
-            matrixStack.push();
-            matrixStack.translate(x, y, 0);
-            matrixStack.scale(scale, scale, scale);
-            matrixStack.translate(-x, -y, 0);
-            context.drawText(textRenderer, text, x, y, color, shadowed);
-            matrixStack.pop();
+            matrices.push();
+            matrices.translate(x, y, 0);
+            matrices.scale(scale, scale, scale);
+            matrices.translate(-x, -y, 0);
+
+            if (shadowed) {
+                textRenderer.drawWithShadow(matrices, text, x, y, color);
+            } else {
+                textRenderer.draw(matrices, text, x, y, color);
+            }
+
+            matrices.pop();
         }
         else {
-            context.drawText(textRenderer, text, x, y, color, shadowed);
+            if (shadowed) {
+                textRenderer.drawWithShadow(matrices, text, x, y, color);
+            } else {
+                textRenderer.draw(matrices, text, x, y, color);
+            }
         }
     }
 }

@@ -39,7 +39,7 @@ public class ClothOptionScreen {
                 .setDefaultValue(configDefaults.textSize)
                 .setSaveConsumer(newValue -> config.textSize = newValue)
                 .build());
-        general.addEntry(entryBuilder.startColorField(new TranslatableText("text.fpsdisplay.options.textColor").asString(), config.textColor)
+        general.addEntry(entryBuilder.startIntField(new TranslatableText("text.fpsdisplay.options.textColor").asString(), config.textColor)
                 .setDefaultValue(configDefaults.textColor)
                 .setSaveConsumer(newValue -> config.textColor = newValue)
                 .build());
@@ -63,7 +63,7 @@ public class ClothOptionScreen {
 
         general.addEntry(entryBuilder.startEnumSelector(new TranslatableText("text.fpsdisplay.options.keybindMode").asString(), ConfigData.KeyMode.class, config.keybindMode)
                 .setDefaultValue(configDefaults.keybindMode)
-                .setSaveConsumer(newValue -> config.keybindMode = newValue)
+                .setSaveConsumer(newValue -> config.keybindMode = (ConfigData.KeyMode) newValue)
                 .build());
 
         return builder.build();

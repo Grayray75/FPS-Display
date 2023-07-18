@@ -1,6 +1,6 @@
 package io.grayray75.mods.fpsdisplay.mixin;
 
-import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.platform.GlStateManager;
 import io.grayray75.mods.fpsdisplay.FpsDisplayMod;
 import io.grayray75.mods.fpsdisplay.config.ConfigData;
 import io.grayray75.mods.fpsdisplay.config.ConfigManager;
@@ -32,15 +32,15 @@ public class InGameHudMixin {
             int textPosX = config.offsetLeft;
             int textPosY = config.offsetTop;
 
-            double guiScale = client.getWindow().getScaleFactor();
+            double guiScale = client.window.getScaleFactor();
             if (guiScale > 0) {
                 textPosX /= guiScale;
                 textPosY /= guiScale;
             }
 
             // Prevent text to render outside screenspace
-            int maxTextPosX = client.getWindow().getScaledWidth() - client.textRenderer.getStringWidth(text);
-            int maxTextPosY = client.getWindow().getScaledHeight() - client.textRenderer.fontHeight;
+            int maxTextPosX = client.window.getScaledWidth() - client.textRenderer.getStringWidth(text);
+            int maxTextPosY = client.window.getScaledHeight() - client.textRenderer.fontHeight;
             textPosX = Math.min(textPosX, maxTextPosX);
             textPosY = Math.min(textPosY, maxTextPosY);
 
@@ -52,10 +52,10 @@ public class InGameHudMixin {
 
     private void renderText(TextRenderer textRenderer, String text, int x, int y, int color, float scale, boolean shadowed) {
         if (scale != 1.0f) {
-            RenderSystem.pushMatrix();
-            RenderSystem.translatef(x, y, 0);
-            RenderSystem.scalef(scale, scale, scale);
-            RenderSystem.translatef(-x, -y, 0);
+            GlStateManager.pushMatrix();
+            GlStateManager.translatef(x, y, 0);
+            GlStateManager.scalef(scale, scale, scale);
+            GlStateManager.translatef(-x, -y, 0);
 
             if (shadowed) {
                 textRenderer.drawWithShadow(text, x, y, color);
@@ -63,7 +63,7 @@ public class InGameHudMixin {
                 textRenderer.draw(text, x, y, color);
             }
 
-            RenderSystem.popMatrix();
+            GlStateManager.popMatrix();
         }
         else {
             if (shadowed) {

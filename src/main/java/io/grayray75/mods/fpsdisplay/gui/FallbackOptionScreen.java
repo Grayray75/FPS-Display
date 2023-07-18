@@ -22,9 +22,9 @@ public class FallbackOptionScreen extends Screen {
     protected void init() {
         // create done button
         ButtonWidget doneButton = new ButtonWidget(this.width / 2 - 100, this.height - 27, 200, 20, ScreenTexts.DONE, (button) -> {
-            this.client.setScreen(this.parent);
+            this.client.openScreen(this.parent);
         });
-        this.addDrawableChild(doneButton);
+        this.addButton(doneButton);
 
         super.init();
     }
@@ -39,6 +39,6 @@ public class FallbackOptionScreen extends Screen {
 
     @Override
     public void onClose() {
-        this.client.setScreen(this.parent);
+        this.client.openScreen(this.parent);
     }
 }

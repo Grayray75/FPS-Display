@@ -2,7 +2,7 @@
     "required": true,
     "minVersion": "0.8",
     "package": "io.grayray75.mods.fpsdisplay.mixin",
-    "compatibilityLevel": "JAVA_16",
+    "compatibilityLevel": "JAVA_8",
     "mixins": [],
     "client": [
         "InGameHudMixin",

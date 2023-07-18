@@ -1,7 +1,7 @@
 package io.grayray75.mods.fpsdisplay.config;
 
-import com.terraformersmc.modmenu.api.ConfigScreenFactory;
-import com.terraformersmc.modmenu.api.ModMenuApi;
+import io.github.prospector.modmenu.api.ConfigScreenFactory;
+import io.github.prospector.modmenu.api.ModMenuApi;
 import io.grayray75.mods.fpsdisplay.gui.ClothOptionScreen;
 import io.grayray75.mods.fpsdisplay.gui.FallbackOptionScreen;
 import net.fabricmc.loader.api.FabricLoader;

@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.0.1
+
+* Fix fallback option screen messages.
+* Use slider for text alpha option.
+
 ## v3.0.0
 
 * Complete rewrite of the mod.

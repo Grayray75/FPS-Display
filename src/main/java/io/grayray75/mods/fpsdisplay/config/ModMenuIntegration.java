@@ -9,7 +9,7 @@ import net.fabricmc.loader.api.FabricLoader;
 public class ModMenuIntegration implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        if (FabricLoader.getInstance().isModLoaded("cloth-config")) {
+        if (FabricLoader.getInstance().isModLoaded("cloth-config2")) {
             return parent -> ClothOptionScreen.generateScreen(parent);
         }
         else {

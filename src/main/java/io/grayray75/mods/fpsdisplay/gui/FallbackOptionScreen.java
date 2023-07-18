@@ -38,7 +38,7 @@ public class FallbackOptionScreen extends Screen {
     }
 
     @Override
-    public void close() {
+    public void onClose() {
         this.client.setScreen(this.parent);
     }
 }

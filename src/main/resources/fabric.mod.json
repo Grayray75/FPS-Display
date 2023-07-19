@@ -29,11 +29,10 @@
     "depends": {
         "fabricloader": ">=0.14.0",
         "minecraft": "${mcversion}",
-        "fabric-key-binding-api-v1": "*",
-        "fabric-lifecycle-events-v1": "*"
+        "legacy-fabric-keybinding-api-v1-common": "*",
+        "legacy-fabric-lifecycle-events-v1-common": "*"
     },
     "suggests": {
-        "cloth-config": "*",
         "modmenu": "*"
     },
     "custom": {

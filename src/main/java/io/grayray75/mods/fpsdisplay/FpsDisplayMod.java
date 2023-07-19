@@ -6,11 +6,10 @@ import io.grayray75.mods.fpsdisplay.mixin.MinecraftClientAccessor;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.minecraft.client.options.KeyBinding;
-import net.minecraft.client.util.InputUtil;
-import org.lwjgl.glfw.GLFW;
+import net.legacyfabric.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.legacyfabric.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.minecraft.client.option.KeyBinding;
+import org.lwjgl.input.Keyboard;
 
 @Environment(EnvType.CLIENT)
 public class FpsDisplayMod implements ClientModInitializer {
@@ -26,8 +25,7 @@ public class FpsDisplayMod implements ClientModInitializer {
 
         KeyBinding toggleKeybinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.fpsdisplay.toggleOverlay",
-                InputUtil.Type.KEYSYM,
-                GLFW.GLFW_DONT_CARE,
+                Keyboard.KEY_NONE,
                 "key.fpsdisplay.category"));
 
         ClientTickEvents.START_CLIENT_TICK.register(client -> {

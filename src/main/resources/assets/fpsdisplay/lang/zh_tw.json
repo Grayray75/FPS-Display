@@ -1,0 +1,16 @@
+{
+    "text.fpsdisplay.options.fallback_title": "FPS-Display 設定通知",
+    "text.fpsdisplay.options.fallback_message": "請安裝 'Cloth Config API' 才能存取設定選單",
+    "text.fpsdisplay.options.title": "FPS-Display 設定",
+    "text.fpsdisplay.options.enabled": "已啟用",
+    "text.fpsdisplay.options.advancedStats": "顯示最小、平均和最高 FPS",
+    "text.fpsdisplay.options.textSize": "文字大小",
+    "text.fpsdisplay.options.textColor": "文字顏色",
+    "text.fpsdisplay.options.textAlpha": "文字透明度",
+    "text.fpsdisplay.options.textShadows": "文字陰影",
+    "text.fpsdisplay.options.offsetTop": "上邊距",
+    "text.fpsdisplay.options.offsetLeft": "左邊距",
+    "text.fpsdisplay.options.keybindMode": "左邊距",
+    "key.fpsdisplay.category": "FPS-Display",
+    "key.fpsdisplay.toggleOverlay": "開關 FPS 顯示"
+}

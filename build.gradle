@@ -87,7 +87,7 @@ modrinth {
     token = ENV.MODRINTH_TOKEN
 
     projectId = "DIlqwRFH"
-    versionNumber = "${project.mod_version}"
+    versionNumber = "${project.mod_version}+${project.minecraft_version_supported}"
     versionName = "v${project.mod_version} (${project.minecraft_version_supported})"
     versionType = "release"
     changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/main/CHANGELOG.md"

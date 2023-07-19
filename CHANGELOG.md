@@ -1,8 +1,14 @@
 # Changelog
 
+
+## v3.1.0
+
+* Added Chinese Traditional translation ([#13](https://github.com/Grayray75/FPS-Display/pull/13)).
+* Backport v3 to older Minecraft versions.
+
 ## v3.0.1
 
-* Fix fallback option screen messages.
+* Fixed fallback option screen messages.
 * Use slider for text alpha option.
 
 ## v3.0.0
@@ -17,12 +23,12 @@ Cloth Config is still required in order to change the mod settings ingame.
 
 ## v1.5.0
 
-* Added es_es translation. ([#10](https://github.com/Grayray75/FPS-Display/pull/10))
+* Added Spanish translation. ([#10](https://github.com/Grayray75/FPS-Display/pull/10))
 * Added an option to change the text size. ([#7](https://github.com/Grayray75/FPS-Display/issues/7))
 
 ## v1.4.2
 
-* Added pt_br translation. ([#6](https://github.com/Grayray75/FPS-Display/pull/6))
+* Added Brazilian Portuguese translation. ([#6](https://github.com/Grayray75/FPS-Display/pull/6))
 
 ## v1.4.1
 

@@ -21,12 +21,11 @@ You can download this mod from:
 Minecraft version: | Support:
 ------------------ | --------
 1.20.x | ✔️ Active
-1.19.x | ❌ Soon™
-1.18.x | ❌ Soon™
-1.17.x | ❌ Soon™
-1.16.x | ❌ Soon™
-1.15.x | ❌ Soon™
-1.14.x | ❌ Soon™
-
-**NOTE:** \
-v3 currently only supports the latest Minecraft version, this may change in the future if I find time to backport the improvements.
+1.19.4 | ✔️ Active
+1.19.3 | ✔️ Active
+1.18.2 | ✔️ Active
+1.17.x | ✔️ Active
+1.16.x | ✔️ Active
+1.15.x | ✔️ Active
+1.14.x | ✔️ Active
+1.8.9 | ✔️ Active

@@ -5,18 +5,17 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout sources
         uses: actions/checkout@v3
       - name: Validate gradle wrapper
         uses: gradle/wrapper-validation-action@v1
-      - name: Set up JDK
+      - name: Setup JDK
         uses: actions/setup-java@v3
         with:
           distribution: "temurin"
           java-version: "17"
           cache: "gradle"
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew build --no-daemon

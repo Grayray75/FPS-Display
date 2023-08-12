@@ -3,7 +3,7 @@
 
 ## v3.1.0
 
-* Added Chinese Traditional translation ([#13](https://github.com/Grayray75/FPS-Display/pull/13)).
+* Added Chinese Traditional translation. ([#13](https://github.com/Grayray75/FPS-Display/pull/13))
 * Backport v3 to older Minecraft versions.
 
 ## v3.0.1

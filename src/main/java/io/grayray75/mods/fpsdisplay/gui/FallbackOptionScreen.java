@@ -21,10 +21,9 @@ public class FallbackOptionScreen extends Screen {
     @Override
     protected void init() {
         // create done button
-        ButtonWidget doneButton = ButtonWidget.builder(ScreenTexts.DONE, (button) -> {
-            this.close();
-        }).width(200).position(this.width / 2 - 100, this.height - 27).build();
-        this.addDrawableChild(doneButton);
+        this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height - 27, 200, 20, ScreenTexts.DONE, (button) -> {
+            this.client.setScreen(this.parent);
+        }));
 
         super.init();
     }

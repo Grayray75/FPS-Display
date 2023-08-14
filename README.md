@@ -25,6 +25,7 @@ Minecraft: | Support:
 1.20.x | ✔️ Active
 1.19.4 | ✔️ Active
 1.19.3 | ✔️ Active
+1.19.2 | ✔️ Active
 1.18.2 | ✔️ Active
 1.17.x | ✔️ Active
 1.16.x | ✔️ Active

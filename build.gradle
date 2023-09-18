@@ -6,10 +6,7 @@ plugins {
     id "maven-publish"
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
-
-archivesBaseName = project.archives_base_name
+base.archivesName = project.archives_base_name
 version = "${project.mod_version}+${project.minecraft_version_supported}"
 group = project.maven_group
 
@@ -43,8 +40,8 @@ def includeFabricApiModule(String moduleName) {
 
 processResources {
     Map modJsonProperties = Map.of(
-            "version", project.version,
-            "mcversion", project.minecraft_version_supported
+        "version", project.version,
+        "mcversion", project.minecraft_version_supported
     )
 
     inputs.properties modJsonProperties
@@ -62,6 +59,9 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+    
     withSourcesJar()
 }
 

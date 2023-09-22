@@ -18,19 +18,11 @@ You can download this mod from:
 * [Modrinth](https://modrinth.com/mod/fpsdisplay)
 * [CurseForge](https://www.curseforge.com/minecraft/mc-mods/fpsdisplay)
 
-## 🎲 Supported versions
+## 🎲 Version support
 
-| Minecraft | Support                    | Note                        |
-| --------- | -------------------------- | --------------------------- |
-| 1.20.2    | :heavy_check_mark: Active  |
-| 1.20.1    | :heavy_check_mark: Delayed |
-| 1.19.4    | :heavy_check_mark: Delayed |
-| 1.19.3    | :heavy_check_mark: Delayed |
-| 1.19.2    | :heavy_check_mark: Delayed |
-| 1.18.2    | :heavy_check_mark: Delayed |
-| 1.17.x    | :heavy_check_mark: Delayed |
-| 1.16.x    | :heavy_check_mark: Delayed |
-| 1.15.x    | :heavy_check_mark: Delayed |
-| 1.14.x    | :heavy_check_mark: Delayed |
-| 1.12.2    | Planned                    |
-| 1.8.9     | :heavy_check_mark: Delayed | Currently has no config gui |
+| Minecraft version | Latest mod version | Support status             |
+| ----------------- | ------------------ | -------------------------- |
+| 1.20.2            | `3.1.0`            | :heavy_check_mark: Active  |
+| 1.14.0 - 1.20.1   | `3.1.0`            | :heavy_check_mark: Delayed |
+| 1.12.2            |                    | :white_circle: soon™       |
+| 1.8.9             | `3.1.0`            | :heavy_check_mark: Delayed |

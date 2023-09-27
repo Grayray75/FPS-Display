@@ -5,11 +5,19 @@ A simple **Fabric** mod that displays the current FPS on screen.
 
 ![preview](./media/showcase/fps-counter.png)
 
+In order to access the settings menu ingame, you either need [Cloth-Config](https://modrinth.com/mod/cloth-config) or [YetAnotherConfigLib](https://modrinth.com/mod/yacl) installed.
+If both config libraries are installed YetAnotherConfigLib will be used.
+
 <details>
-<summary>Settings Menu</summary>
+<summary>Settings Menu (YetAnotherConfigLib)</summary>
 
-![settings](./media/showcase/options-clothconfig.png)
+![settings](./media/showcase/settings-yacl.png)
+</details>
 
+<details>
+<summary>Settings Menu (Cloth-Config)</summary>
+
+![settings](./media/showcase/settings-clothconfig.png)
 </details>
 
 ## 📥 Downloads

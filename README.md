@@ -1,4 +1,7 @@
 # FPS-Display
+[![Modrinth downloads](https://img.shields.io/modrinth/dt/DIlqwRFH?logo=modrinth&label=Modrinth&color=00AF5C)](https://modrinth.com/mod/fpsdisplay)
+[![CurseForge downloads](https://img.shields.io/curseforge/dt/440228?logo=curseforge&label=CurseForge&color=F16436)](https://www.curseforge.com/minecraft/mc-mods/fpsdisplay)
+
 A simple **Fabric** mod that displays the current FPS on screen.
 
 ## 🖼️ Showcase

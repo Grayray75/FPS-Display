@@ -42,7 +42,7 @@ public class YaclOptionScreen {
         );
         categoryBuilder.option(Option.<Color>createBuilder()
             .name(Text.translatable("text.fpsdisplay.options.textColor"))
-            .binding(new Color(configDefaults.textColor), () -> new Color(config.textColor), newValue -> config.textColor = newValue.getRGB())
+            .binding(new Color(configDefaults.textColor), () -> new Color(config.textColor), newValue -> config.textColor = (newValue.getRGB() & 0xFFFFFF))
             .controller(option -> ColorControllerBuilder.create(option).allowAlpha(false))
             .build()
         );

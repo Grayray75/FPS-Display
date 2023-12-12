@@ -4,6 +4,7 @@
 
 * Changed version support policy.
 * Added a new settings screen which uses YetAnotherConfigLib.
+* Update to Minecraft v1.20.4
 
 
 ## v3.1.0

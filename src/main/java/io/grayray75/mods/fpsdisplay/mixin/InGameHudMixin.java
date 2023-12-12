@@ -20,7 +20,7 @@ public class InGameHudMixin {
         MinecraftClient client = MinecraftClient.getInstance();
         ConfigData config = ConfigManager.getConfig();
 
-        if (!client.options.hudHidden && config.enabled && config.textAlpha > 3 && FpsDisplayMod.ShowOverlay) {
+        if (!client.options.hudHidden && !client.getDebugHud().shouldShowDebugHud() && config.enabled && config.textAlpha > 3 && FpsDisplayMod.ShowOverlay) {
             String text;
             if (!config.advancedStats) {
                 text = ((MinecraftClientAccessor) client).getCurrentFps() + " FPS";
@@ -45,7 +45,7 @@ public class InGameHudMixin {
             textPosX = Math.min(textPosX, maxTextPosX);
             textPosY = Math.min(textPosY, maxTextPosY);
 
-            int textColor = ((config.textAlpha & 0xFF) << 24) | config.textColor;
+            int textColor = ((config.textAlpha & 0xFF) << 24) | (config.textColor & 0xFFFFFF);
 
             this.renderText(context, client.textRenderer, text, textPosX, textPosY, textColor, config.textSize, config.textShadows);
         }

@@ -1,13 +1,12 @@
 plugins {
-    id "fabric-loom" version "1.3-SNAPSHOT"
-    id "io.github.juuxel.loom-vineflower" version "1.11.0"
+    id "fabric-loom" version "1.4-SNAPSHOT"
     id "com.modrinth.minotaur" version "2.+"
     id "com.matthewprenger.cursegradle" version "1.4.0"
     id "maven-publish"
 }
 
 base.archivesName = project.archives_base_name
-version = "${project.mod_version}+${project.minecraft_version_supported}"
+version = "${project.mod_version}+${project.minecraft_version}"
 group = project.maven_group
 
 repositories {
@@ -46,15 +45,10 @@ def includeFabricApiModule(String moduleName) {
 }
 
 processResources {
-    Map modJsonProperties = Map.of(
-        "version", project.version,
-        "mcversion", project.minecraft_version_supported
-    )
-
-    inputs.properties modJsonProperties
+    inputs.property "version", project.version
 
     filesMatching("fabric.mod.json") {
-        expand modJsonProperties
+        expand "version": project.version
     }
 }
 
@@ -94,13 +88,13 @@ modrinth {
     token = ENV.MODRINTH_TOKEN
 
     projectId = "DIlqwRFH"
-    versionNumber = "${project.mod_version}+${project.minecraft_version_supported}"
-    versionName = "v${project.mod_version} (${project.minecraft_version_supported})"
+    versionNumber = "${project.mod_version}+${project.minecraft_version}"
+    versionName = "v${project.mod_version} (${project.minecraft_version})"
     versionType = "release"
     changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/main/CHANGELOG.md"
 
     uploadFile = remapJar
-    gameVersions = ["1.20.2"]
+    gameVersions = ["1.20.3", "1.20.4"]
     loaders = ["fabric", "quilt"]
     dependencies {
         optional.project "modmenu"
@@ -119,13 +113,14 @@ curseforge {
         releaseType = "release"
         changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/main/CHANGELOG.md"
 
-        addGameVersion "1.20.2"
+        addGameVersion "1.20.3"
+        addGameVersion "1.20.4"
         addGameVersion "Fabric"
         addGameVersion "Quilt"
         addGameVersion "Java 17"
 
         mainArtifact(remapJar) {
-            displayName = "v${project.mod_version} (${project.minecraft_version_supported})"
+            displayName = "v${project.mod_version} (${project.minecraft_version})"
             relations {
                 optionalDependency "modmenu"
                 optionalDependency "cloth-config"

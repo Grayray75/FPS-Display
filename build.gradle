@@ -9,32 +9,11 @@ base.archivesName = project.archives_base_name
 version = "${project.mod_version}+${project.minecraft_version_supported}"
 group = project.maven_group
 
-repositories {
-    maven { url = "https://maven.shedaniel.me/" }
-    maven { url = "https://maven.terraformersmc.com/releases/" }
-
-    exclusiveContent {
-        forRepository {
-            maven {
-                name = "Modrinth"
-                url = "https://api.modrinth.com/maven"
-            }
-        }
-        filter {
-            includeGroup "maven.modrinth"
-        }
-    }
-}
-
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings legacy.yarn(project.minecraft_version, project.yarn_mappings_build)
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-    modImplementation "net.legacyfabric.legacy-fabric-api:legacy-fabric-api:${project.fabric_version}"
-
-    modImplementation "maven.modrinth:legacy-mod-menu:${modmenu_version}"
 }
 
 processResources {
@@ -93,7 +72,7 @@ modrinth {
     changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/main/CHANGELOG.md"
 
     uploadFile = remapJar
-    gameVersions = ["1.8.9"]
+    gameVersions = ["1.13.2"]
     loaders = ["fabric"]
     dependencies {
         optional.project "legacy-mod-menu"

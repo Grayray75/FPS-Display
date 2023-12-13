@@ -2,7 +2,7 @@
     "schemaVersion": 1,
     "id": "fpsdisplay",
     "version": "${version}",
-    "name": "FPS-Display",
+    "name": "FPS-Display (Simplified)",
     "description": "A simple Fabric mod that displays the current FPS on screen.",
     "authors": [
         "Grayray75"
@@ -18,9 +18,6 @@
     "entrypoints": {
         "client": [
             "io.grayray75.mods.fpsdisplay.FpsDisplayMod"
-        ],
-        "modmenu": [
-            "io.grayray75.mods.fpsdisplay.config.ModMenuIntegration"
         ]
     },
     "mixins": [
@@ -28,14 +25,6 @@
     ],
     "depends": {
         "fabricloader": ">=0.14.0",
-        "minecraft": "${mcversion}",
-        "legacy-fabric-keybinding-api-v1-common": "*",
-        "legacy-fabric-lifecycle-events-v1-common": "*"
-    },
-    "suggests": {
-        "modmenu": "*"
-    },
-    "custom": {
-        "modmenu:clientsideOnly": true
+        "minecraft": "${mcversion}"
     }
 }

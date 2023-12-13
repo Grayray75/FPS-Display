@@ -29,7 +29,7 @@ public class FpsDisplayMod implements ClientModInitializer {
                 "key.fpsdisplay.category"));
 
         ClientTickEvents.START_CLIENT_TICK.register(client -> {
-            int currentFps = ((MinecraftClientAccessor) client).getCurrentFps();
+            int currentFps = MinecraftClientAccessor.getCurrentFps();
             FpsHistory.add(currentFps);
         });
 

@@ -33,13 +33,11 @@ You can download this mod from:
 
 ## 🎲 Version support
 
-| Minecraft version | Latest mod version | Support status             |
-| ----------------- | ------------------ | -------------------------- |
-| 1.20.3, 1.20.4    | `4.0.0`            | :heavy_check_mark: Active  |
-| 1.14.0 - 1.20.1   | `3.1.0`            | :warning: Bug fixes only   |
-| 1.12.2            |                    | :white_circle: soon™       |
-| 1.8.9             | `3.1.0`            | :heavy_check_mark: Delayed |
+| Minecraft version | Latest mod version | Support status            |
+| ----------------- | ------------------ | ------------------------- |
+| 1.20.3, 1.20.4    | `4.0.0`            | :heavy_check_mark: Active |
+| 1.14.0 - 1.20.1   | `3.1.0`            | :x: Obsolete              |
+| 1.12.2            |                    | :white_circle: soon™      |
+| 1.8.9             | `3.1.0`            | :warning: soon™           |
 
-Starting with v4.0 this mod will only be developed for the latest Minecraft version available.
-It's a lot of work to develop, test, release a mod for 26+ different versions of Minecraft and I don't have the time for that anymore.
-Versions 3.x of the mod will still receive bug fixes, for the time being.
+Starting with v4.0 this mod will only be developed for the latest Minecraft version available and maybe some older legacy version I still care about.

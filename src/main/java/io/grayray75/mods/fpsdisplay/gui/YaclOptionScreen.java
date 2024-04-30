@@ -66,7 +66,7 @@ public class YaclOptionScreen {
             .build()
         );
         categoryBuilder.option(Option.<Integer>createBuilder()
-            .name(Text.translatable("text.fpsdisplay.options.textAlpha"))
+            .name(Text.translatable("text.fpsdisplay.options.offsetLeft"))
             .binding(configDefaults.offsetLeft, () -> config.offsetLeft, newValue -> config.offsetLeft = newValue)
             .controller(IntegerFieldControllerBuilder::create)
             .build()

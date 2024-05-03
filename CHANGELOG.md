@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.0.1
+
+* Fixed incorrect translation in the settings menu.
+
 ## v4.0.0
 
 * Changed version support policy.

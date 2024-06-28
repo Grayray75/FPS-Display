@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.1.1
+
+* Update option menu notice.
+
 ## v4.1.0
 
 * Update to Minecraft v1.20.5 / 1.20.6

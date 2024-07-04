@@ -1,0 +1,16 @@
+{
+    "text.fpsdisplay.options.fallback_title": "Уведомления о настройках FPS-Display",
+    "text.fpsdisplay.options.fallback_message": "Установите 'Cloth Config' или 'YetAnotherConfigLib' чтобы получить доступ к настройкам мода",
+    "text.fpsdisplay.options.title": "Настройки FPS-Display",
+    "text.fpsdisplay.options.enabled": "Включено",
+    "text.fpsdisplay.options.advancedStats": "Показывать минимальный, средний и максимальный FPS",
+    "text.fpsdisplay.options.textSize": "Размер текста",
+    "text.fpsdisplay.options.textColor": "Цвет текста",
+    "text.fpsdisplay.options.textAlpha": "Прозрачность текста",
+    "text.fpsdisplay.options.textShadows": "Тень текста",
+    "text.fpsdisplay.options.offsetTop": "Смещение сверху",
+    "text.fpsdisplay.options.offsetLeft": "Смещение слева",
+    "text.fpsdisplay.options.keybindMode": "Режим привязки клавиш",
+    "key.fpsdisplay.category": "FPS-Display",
+    "key.fpsdisplay.toggleOverlay": "Переключить счётчик FPS"
+}

@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.2.1
+
+* Update to Minecraft v1.21.1
+* Add Russian translation. ([#18](https://github.com/Grayray75/FPS-Display/pull/18))
+
 ## v4.2.0
 
 * Update to Minecraft v1.21

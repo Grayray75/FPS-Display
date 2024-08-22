@@ -10,7 +10,8 @@
     "contributors": [
         "koelle25",
         "Boxadactle",
-        "notlin4"
+        "notlin4",
+        "Alexander317"
     ],
     "contact": {
         "homepage": "https://github.com/Grayray75/FPS-Display",
@@ -33,7 +34,7 @@
     ],
     "depends": {
         "fabricloader": ">=0.15.10",
-        "minecraft": ["1.21"],
+        "minecraft": ["1.21", "1.21.1"],
         "fabric-key-binding-api-v1": "*",
         "fabric-lifecycle-events-v1": "*"
     },

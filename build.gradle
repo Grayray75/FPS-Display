@@ -25,6 +25,7 @@ dependencies {
     includeFabricApiModule "fabric-key-binding-api-v1"
     includeFabricApiModule "fabric-lifecycle-events-v1"
 
+    // Provides the latest farbic-api in dev runtime for mod dependencies
     modLocalRuntime "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"

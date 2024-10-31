@@ -35,10 +35,10 @@ You can download this mod from:
 
 | Minecraft version | Latest mod version | Support status            |
 | ----------------- | ------------------ | ------------------------- |
-| 1.21, 1.21.1      | `4.2.1`            | :heavy_check_mark: Active |
+| 1.21 -  1.21.3    | `4.2.2`            | :heavy_check_mark: Active |
 | 1.20.5, 1.20.6    | `4.1.0`            | :x: Obsolete              |
 | 1.20.3, 1.20.4    | `4.0.0`            | :x: Obsolete              |
-| 1.14.0 - 1.20.2   | `3.1.0`            | :x: Obsolete              |
+| 1.14 - 1.20.2     | `3.1.0`            | :x: Obsolete              |
 | 1.12.2            |                    | :white_circle: soon™      |
 | 1.8.9             | `3.1.0`            | :warning: soon™           |
 

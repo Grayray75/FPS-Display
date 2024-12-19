@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.2.4
+
+* Updated to Minecraft v1.21.4
+
 ## v4.2.3
 
 * Limit compatibility to Minecraft v1.21.2 & v1.21.3

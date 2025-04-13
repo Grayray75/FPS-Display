@@ -1,10 +1,16 @@
 {
+    "text.fpsdisplay.options.fallback_title": "Aviso das Configurações do FPS-Display",
+    "text.fpsdisplay.options.fallback_message": "Instale o 'Cloth Config' ou o 'YetAnotherConfigLib' para acessar o menu de opções",
+    "text.fpsdisplay.options.title": "Configurações do FPS-Display",
     "text.fpsdisplay.options.enabled": "Ativado",
+    "text.fpsdisplay.options.advancedStats": "Mostrar FPS mínimo, médio e máximo",
+    "text.fpsdisplay.options.textSize": "Tamanho do texto",
     "text.fpsdisplay.options.textColor": "Cor do texto",
     "text.fpsdisplay.options.textAlpha": "Visibilidade do texto",
     "text.fpsdisplay.options.textShadows": "Sombreamento do texto",
-    "text.fpsdisplay.options.offsetTop": "Deslocamento no topo",
-    "text.fpsdisplay.options.offsetLeft": "Deslocamento na esquerda",
+    "text.fpsdisplay.options.offsetTop": "Deslocamento superior",
+    "text.fpsdisplay.options.offsetLeft": "Deslocamento à esquerda",
+    "text.fpsdisplay.options.keybindMode": "Modo de tecla de atalho",
     "key.fpsdisplay.category": "FPS-Display",
-    "key.fpsdisplay.toggleOverlay": "Mostrar/ocultar sobreposição da taxa de quadros"
+    "key.fpsdisplay.toggleOverlay": "Alternar exibição de FPS"
 }

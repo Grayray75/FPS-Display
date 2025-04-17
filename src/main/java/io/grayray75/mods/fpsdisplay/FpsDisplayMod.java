@@ -6,6 +6,7 @@ import io.grayray75.mods.fpsdisplay.mixin.MinecraftClientAccessor;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
@@ -45,6 +46,10 @@ public class FpsDisplayMod implements ClientModInitializer {
             else {
                 ShowOverlay = config.enabled;
             }
+        });
+
+        ClientLifecycleEvents.CLIENT_STOPPING.register(client -> {
+            ConfigManager.saveConfig();
         });
     }
 }

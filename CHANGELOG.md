@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.3.0
+
+* Save enabled state on client exit ([#21](https://github.com/Grayray75/FPS-Display/issues/21))
+* Update pt_br translation ([#22](https://github.com/Grayray75/FPS-Display/pull/22))
+
 ## v4.2.4
 
 * Updated to Minecraft v1.21.4

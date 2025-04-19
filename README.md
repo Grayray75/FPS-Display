@@ -35,7 +35,8 @@ You can download this mod from:
 
 | Minecraft version | Latest mod version | Support status            |
 | ----------------- | ------------------ | ------------------------- |
-| 1.21.4            | `4.2.4`            | :heavy_check_mark: Active |
+| 1.21.5            | `4.3.1`            | :heavy_check_mark: Active |
+| 1.21.4            | `4.3.0`            | :x: Obsolete              |
 | 1.21.2, 1.21.3    | `4.2.3`            | :x: Obsolete              |
 | 1.21, 1.21.1      | `4.2.1`            | :x: Obsolete              |
 | 1.20.5, 1.20.6    | `4.1.0`            | :x: Obsolete              |
@@ -44,4 +45,4 @@ You can download this mod from:
 | 1.12.2            |                    | :white_circle: soon™      |
 | 1.8.9             | `3.1.0`            | :warning: soon™           |
 
-Starting with v4.0 this mod will only be developed for the latest Minecraft version available and maybe some older legacy version I still care about.
+Starting with v4.0 this mod will only be developed for the latest Minecraft version and maybe some older legacy versions I still care about.

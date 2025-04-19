@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.3.1
+
+* Updated to Minecraft v1.21.5
+
 ## v4.3.0
 
 * Save enabled state on client exit ([#21](https://github.com/Grayray75/FPS-Display/issues/21))

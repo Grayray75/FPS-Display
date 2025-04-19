@@ -94,7 +94,7 @@ modrinth {
     changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/main/CHANGELOG.md"
 
     uploadFile = remapJar
-    gameVersions = ["1.21.4"]
+    gameVersions = ["1.21.5"]
     loaders = ["fabric", "quilt"]
     dependencies {
         optional.project "modmenu"
@@ -113,7 +113,7 @@ curseforge {
         releaseType = "release"
         changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/main/CHANGELOG.md"
 
-        addGameVersion "1.21.4"
+        addGameVersion "1.21.5"
         addGameVersion "Fabric"
         addGameVersion "Quilt"
         addGameVersion "Java 21"

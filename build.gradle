@@ -34,7 +34,9 @@ dependencies {
         exclude(group: "net.fabricmc.fabric-api")
     }
 
-    modApi "dev.isxander:yet-another-config-lib:${project.yacl_config_version}-fabric"
+    modApi("dev.isxander:yet-another-config-lib:${project.yacl_config_version}-fabric") {
+        transitive = false
+    }
 }
 
 def includeFabricApiModule(String moduleName) {
@@ -94,7 +96,7 @@ modrinth {
     changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/main/CHANGELOG.md"
 
     uploadFile = remapJar
-    gameVersions = ["1.21.5"]
+    gameVersions = ["1.21.6"]
     loaders = ["fabric", "quilt"]
     dependencies {
         optional.project "modmenu"
@@ -113,7 +115,7 @@ curseforge {
         releaseType = "release"
         changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/main/CHANGELOG.md"
 
-        addGameVersion "1.21.5"
+        addGameVersion "1.21.6"
         addGameVersion "Fabric"
         addGameVersion "Quilt"
         addGameVersion "Java 21"

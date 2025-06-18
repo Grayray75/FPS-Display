@@ -8,7 +8,7 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.render.RenderTickCounter;
-import org.joml.Matrix3x2fStack;
+import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -56,13 +56,13 @@ public class InGameHudMixin {
     @Unique
     private void renderText(DrawContext context, TextRenderer textRenderer, String text, int x, int y, int color, float scale, boolean shadowed) {
         if (scale != 1.0f) {
-            Matrix3x2fStack matrixStack = context.getMatrices();
-            matrixStack.pushMatrix();
-            matrixStack.translate(x, y);
-            matrixStack.scale(scale, scale);
-            matrixStack.translate(-x, -y);
+            MatrixStack matrixStack = context.getMatrices();
+            matrixStack.push();
+            matrixStack.translate(x, y, 0);
+            matrixStack.scale(scale, scale, scale);
+            matrixStack.translate(-x, -y, 0);
             context.drawText(textRenderer, text, x, y, color, shadowed);
-            matrixStack.popMatrix();
+            matrixStack.pop();
         }
         else {
             context.drawText(textRenderer, text, x, y, color, shadowed);

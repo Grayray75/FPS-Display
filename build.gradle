@@ -34,9 +34,7 @@ dependencies {
         exclude(group: "net.fabricmc.fabric-api")
     }
 
-    modApi("dev.isxander:yet-another-config-lib:${project.yacl_config_version}-fabric") {
-        transitive = false
-    }
+    modApi("dev.isxander:yet-another-config-lib:${project.yacl_config_version}-fabric")
 }
 
 def includeFabricApiModule(String moduleName) {

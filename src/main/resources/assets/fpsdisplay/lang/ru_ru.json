@@ -11,6 +11,5 @@
     "text.fpsdisplay.options.offsetTop": "Смещение сверху",
     "text.fpsdisplay.options.offsetLeft": "Смещение слева",
     "text.fpsdisplay.options.keybindMode": "Режим привязки клавиш",
-    "key.fpsdisplay.category": "FPS-Display",
     "key.fpsdisplay.toggleOverlay": "Переключить счётчик FPS"
 }

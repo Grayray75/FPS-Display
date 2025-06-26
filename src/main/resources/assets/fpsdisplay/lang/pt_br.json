@@ -11,6 +11,5 @@
     "text.fpsdisplay.options.offsetTop": "Deslocamento superior",
     "text.fpsdisplay.options.offsetLeft": "Deslocamento à esquerda",
     "text.fpsdisplay.options.keybindMode": "Modo de tecla de atalho",
-    "key.fpsdisplay.category": "FPS-Display",
     "key.fpsdisplay.toggleOverlay": "Alternar exibição de FPS"
 }

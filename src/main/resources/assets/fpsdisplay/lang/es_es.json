@@ -1,11 +1,15 @@
 {
+    "text.fpsdisplay.options.fallback_title": "Aviso de configuración de pantalla FPS",
+    "text.fpsdisplay.options.fallback_message": "Por favor, instala 'Cloth Config' o 'YetAnotherConfigLib' para poder acceder al menú de opciones",
+    "text.fpsdisplay.options.title": "Configuración de pantalla FPS",
     "text.fpsdisplay.options.enabled": "Activado",
+    "text.fpsdisplay.options.advancedStats": "Mostrar FPS mínimos, medios y máximos",
     "text.fpsdisplay.options.textSize": "Tamaño del texto",
     "text.fpsdisplay.options.textColor": "Color del texto",
     "text.fpsdisplay.options.textAlpha": "Opacidad del texto",
     "text.fpsdisplay.options.textShadows": "Sombras del texto",
-    "text.fpsdisplay.options.offsetTop": "Distancia desde la arriba",
-    "text.fpsdisplay.options.offsetLeft": "Distancia desde la izquierda",
-    "key.fpsdisplay.category": "FPS-Display",
-    "key.fpsdisplay.toggleOverlay": "Conmutar el superposición de FPS"
+    "text.fpsdisplay.options.offsetTop": "Distancia desde arriba",
+    "text.fpsdisplay.options.offsetLeft": "Distancia desde izquierda",
+    "text.fpsdisplay.options.keybindMode": "Modo de atajo de teclado",
+    "key.fpsdisplay.toggleOverlay": "Alternar visualización de FPS"
 }

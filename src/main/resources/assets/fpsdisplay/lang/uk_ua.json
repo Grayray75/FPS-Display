@@ -1,0 +1,15 @@
+{
+    "text.fpsdisplay.options.fallback_title": "Сповіщення налаштувань FPS-Display",
+    "text.fpsdisplay.options.fallback_message": "Будь ласка, встановіть 'Cloth Config' або 'YetAnotherConfigLib', щоб отримати доступ до меню налаштувань",
+    "text.fpsdisplay.options.title": "Налаштування FPS-Display",
+    "text.fpsdisplay.options.enabled": "Увімкнено",
+    "text.fpsdisplay.options.advancedStats": "Показувати мінімальний, середній та максимальний ФПС",
+    "text.fpsdisplay.options.textSize": "Розмір тексту",
+    "text.fpsdisplay.options.textColor": "Колір тексту",
+    "text.fpsdisplay.options.textAlpha": "Видимість тексту",
+    "text.fpsdisplay.options.textShadows": "Тіні тексту",
+    "text.fpsdisplay.options.offsetTop": "Відступ зверху",
+    "text.fpsdisplay.options.offsetLeft": "Відступ зліва",
+    "text.fpsdisplay.options.keybindMode": "Режим клавіші",
+    "key.fpsdisplay.toggleOverlay": "Перемкнути показник ФПС"
+}

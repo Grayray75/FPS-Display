@@ -35,7 +35,7 @@ You can download this mod from:
 
 | Minecraft version | Latest mod version | Support status            |
 | ----------------- | ------------------ | ------------------------- |
-| 1.21.6            | `4.4.0`            | :heavy_check_mark: Active |
+| 1.21.6, 1.21.7    | `4.4.1`            | :heavy_check_mark: Active |
 | 1.21.5            | `4.3.1`            | :x: Obsolete              |
 | 1.21.4            | `4.3.0`            | :x: Obsolete              |
 | 1.21.2, 1.21.3    | `4.2.3`            | :x: Obsolete              |

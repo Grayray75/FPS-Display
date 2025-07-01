@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.4.1
+
+* Updated to Minecraft v1.21.7
+* Update various translations
+
 ## v4.4.0
 
 * Updated to Minecraft v1.21.6

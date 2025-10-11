@@ -11,6 +11,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
 @Environment(EnvType.CLIENT)
@@ -25,11 +26,12 @@ public class FpsDisplayMod implements ClientModInitializer {
     public void onInitializeClient() {
         ConfigData config = ConfigManager.loadConfig();
 
+        KeyBinding.Category keybinCategory = KeyBinding.Category.create(Identifier.of("key.fpsdisplay.category"));
         KeyBinding toggleKeybinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.fpsdisplay.toggleOverlay",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_DONT_CARE,
-                "key.fpsdisplay.category"));
+                keybinCategory));
 
         ClientTickEvents.START_CLIENT_TICK.register(client -> {
             int currentFps = ((MinecraftClientAccessor) client).getCurrentFps();

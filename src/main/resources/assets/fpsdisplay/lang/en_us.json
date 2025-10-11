@@ -11,6 +11,6 @@
     "text.fpsdisplay.options.offsetTop": "Top offset",
     "text.fpsdisplay.options.offsetLeft": "Left offset",
     "text.fpsdisplay.options.keybindMode": "Keybind Mode",
-    "key.fpsdisplay.category": "FPS-Display",
+    "key.category.fpsdisplay.category": "FPS-Display",
     "key.fpsdisplay.toggleOverlay": "Toggle FPS display"
 }

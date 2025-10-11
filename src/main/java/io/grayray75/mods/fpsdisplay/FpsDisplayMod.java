@@ -26,7 +26,7 @@ public class FpsDisplayMod implements ClientModInitializer {
     public void onInitializeClient() {
         ConfigData config = ConfigManager.loadConfig();
 
-        KeyBinding.Category keybinCategory = KeyBinding.Category.create(Identifier.of("key.fpsdisplay.category"));
+        KeyBinding.Category keybinCategory = KeyBinding.Category.create(Identifier.of("fpsdisplay", "category"));
         KeyBinding toggleKeybinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.fpsdisplay.toggleOverlay",
                 InputUtil.Type.KEYSYM,

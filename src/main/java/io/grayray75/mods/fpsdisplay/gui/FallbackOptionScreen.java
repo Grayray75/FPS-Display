@@ -7,6 +7,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.Text;
+import net.minecraft.util.Colors;
 
 public class FallbackOptionScreen extends Screen {
     protected final Screen parent;
@@ -32,8 +33,8 @@ public class FallbackOptionScreen extends Screen {
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
-        context.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 20, 0xFFFFFF);
-        context.drawCenteredTextWithShadow(this.textRenderer, Text.translatable("text.fpsdisplay.options.fallback_message"), this.width / 2, this.height / 2, 0xFFFFFF);
+        context.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 20, Colors.WHITE);
+        context.drawCenteredTextWithShadow(this.textRenderer, Text.translatable("text.fpsdisplay.options.fallback_message"), this.width / 2, this.height / 2, Colors.WHITE);
     }
 
     @Override

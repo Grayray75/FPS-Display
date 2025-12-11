@@ -25,10 +25,10 @@ public class InGameHudMixin {
         if (!client.options.hideGui && !client.debugEntries.isOverlayVisible() && config.enabled && config.textAlpha > 3 && FpsDisplayMod.ShowOverlay) {
             String text;
             if (!config.advancedStats) {
-                text = ((MinecraftClientAccessor) client).getCurrentFps() + " FPS";
+                text = client.getFps() + " FPS";
             }
             else {
-                text = String.format("%d FPS (%d min | %d avg | %d max)", ((MinecraftClientAccessor) client).getCurrentFps(),
+                text = String.format("%d FPS (%d min | %d avg | %d max)", client.getFps(),
                     FpsDisplayMod.FpsHistory.getMinimum(), FpsDisplayMod.FpsHistory.getAverage(), FpsDisplayMod.FpsHistory.getMaximum());
             }
 

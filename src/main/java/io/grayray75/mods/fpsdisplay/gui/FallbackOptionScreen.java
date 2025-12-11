@@ -2,19 +2,19 @@ package io.grayray75.mods.fpsdisplay.gui;
 
 import io.grayray75.mods.fpsdisplay.config.ConfigData;
 import io.grayray75.mods.fpsdisplay.config.ConfigManager;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.screen.ScreenTexts;
-import net.minecraft.text.Text;
-import net.minecraft.util.Colors;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.util.CommonColors;
 
 public class FallbackOptionScreen extends Screen {
     protected final Screen parent;
     protected final ConfigData config;
 
     public FallbackOptionScreen(Screen parent) {
-        super(Text.translatable("text.fpsdisplay.options.fallback_title"));
+        super(Component.translatable("text.fpsdisplay.options.fallback_title"));
         this.parent = parent;
         this.config = ConfigManager.getConfig();
     }
@@ -22,23 +22,23 @@ public class FallbackOptionScreen extends Screen {
     @Override
     protected void init() {
         // create done button
-        ButtonWidget doneButton = ButtonWidget.builder(ScreenTexts.DONE, (button) -> {
-            this.close();
-        }).width(200).position(this.width / 2 - 100, this.height - 27).build();
-        this.addDrawableChild(doneButton);
+        Button doneButton = Button.builder(CommonComponents.GUI_DONE, (button) -> {
+            this.onClose();
+        }).width(200).pos(this.width / 2 - 100, this.height - 27).build();
+        this.addRenderableWidget(doneButton);
 
         super.init();
     }
 
     @Override
-    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+    public void render(GuiGraphics context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
-        context.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 20, Colors.WHITE);
-        context.drawCenteredTextWithShadow(this.textRenderer, Text.translatable("text.fpsdisplay.options.fallback_message"), this.width / 2, this.height / 2, Colors.WHITE);
+        context.drawCenteredString(this.font, this.title, this.width / 2, 20, CommonColors.WHITE);
+        context.drawCenteredString(this.font, Component.translatable("text.fpsdisplay.options.fallback_message"), this.width / 2, this.height / 2, CommonColors.WHITE);
     }
 
     @Override
-    public void close() {
-        this.client.setScreen(this.parent);
+    public void onClose() {
+        this.minecraft.setScreen(this.parent);
     }
 }

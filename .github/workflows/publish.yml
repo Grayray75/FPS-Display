@@ -15,7 +15,7 @@ jobs:
           distribution: "temurin"
           java-version: "21"
       - name: Build and publish with Gradle
-        run: ./gradlew build publishMods --stacktrace
+        run: ./gradlew build publishMods --stacktrace --no-daemon
         env:
           CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}

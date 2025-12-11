@@ -3,7 +3,7 @@
     "id": "fpsdisplay",
     "version": "${version}",
     "name": "FPS-Display",
-    "description": "A simple Fabric mod that displays the current FPS on screen.",
+    "description": "Displays your current FPS on screen, in various styles",
     "authors": [
         "Grayray75"
     ],

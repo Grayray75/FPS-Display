@@ -3,7 +3,6 @@ package io.grayray75.mods.fpsdisplay;
 import com.mojang.blaze3d.platform.InputConstants;
 import io.grayray75.mods.fpsdisplay.config.ConfigData;
 import io.grayray75.mods.fpsdisplay.config.ConfigManager;
-import io.grayray75.mods.fpsdisplay.mixin.MinecraftClientAccessor;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -26,15 +25,15 @@ public class FpsDisplayMod implements ClientModInitializer {
     public void onInitializeClient() {
         ConfigData config = ConfigManager.loadConfig();
 
-        KeyMapping.Category keybinCategory = KeyMapping.Category.register(Identifier.fromNamespaceAndPath("fpsdisplay", "category"));
+        KeyMapping.Category keybinCategory = KeyMapping.Category.register(Identifier.fromNamespaceAndPath(MOD_ID, "category"));
         KeyMapping toggleKeybinding = KeyBindingHelper.registerKeyBinding(new KeyMapping(
-                "key.fpsdisplay.toggleOverlay",
-                InputConstants.Type.KEYSYM,
-                GLFW.GLFW_DONT_CARE,
-                keybinCategory));
+            "key.fpsdisplay.toggleOverlay",
+            InputConstants.Type.KEYSYM,
+            GLFW.GLFW_DONT_CARE,
+            keybinCategory));
 
         ClientTickEvents.START_CLIENT_TICK.register(client -> {
-            int currentFps = ((MinecraftClientAccessor) client).getCurrentFps();
+            int currentFps = client.getFps();
             FpsHistory.add(currentFps);
         });
 

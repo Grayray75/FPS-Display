@@ -30,6 +30,7 @@ public class ConfigManager {
         try {
             BufferedReader br = new BufferedReader(new FileReader(getFilePath()));
             ConfigData parsed = GSON.fromJson(br, ConfigData.class);
+            br.close();
 
             if (parsed != null) {
                 config = parsed;

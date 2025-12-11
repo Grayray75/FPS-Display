@@ -11,12 +11,10 @@ import net.minecraft.util.CommonColors;
 
 public class FallbackOptionScreen extends Screen {
     protected final Screen parent;
-    protected final ConfigData config;
 
     public FallbackOptionScreen(Screen parent) {
         super(Component.translatable("text.fpsdisplay.options.fallback_title"));
         this.parent = parent;
-        this.config = ConfigManager.getConfig();
     }
 
     @Override

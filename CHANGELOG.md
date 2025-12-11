@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.5.0
+
+* Updated to Minecraft v1.21.11
+
 ## v4.4.4
 
 * Fix option menu appearing blank, when no config gui is installed

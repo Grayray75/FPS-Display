@@ -1,7 +1,6 @@
 plugins {
-    id "fabric-loom" version "1.13-SNAPSHOT"
-    id "com.modrinth.minotaur" version "2.+"
-    id "com.matthewprenger.cursegradle" version "1.4.0"
+    id "fabric-loom" version "1.14-SNAPSHOT"
+    id "me.modmuss50.mod-publish-plugin" version "1.1.0"
     id "maven-publish"
 }
 
@@ -61,7 +60,7 @@ tasks.withType(JavaCompile).configureEach {
 java {
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
-    
+
     withSourcesJar()
 }
 
@@ -82,59 +81,36 @@ publishing {
     }
 }
 
-def ENV = System.getenv()
-
-modrinth {
-    token = ENV.MODRINTH_TOKEN
-
-    projectId = "DIlqwRFH"
-    versionNumber = "${project.mod_version}+${project.minecraft_version}"
-    versionName = "v${project.mod_version} (${project.minecraft_version})"
-    versionType = "release"
+publishMods {
+    file = remapJar.archiveFile
+    type = STABLE
+    displayName = "v${project.mod_version} (${project.minecraft_version})"
     changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/main/CHANGELOG.md"
 
-    uploadFile = remapJar
-    gameVersions = ["1.21.9", "1.21.10"]
-    loaders = ["fabric", "quilt"]
-    dependencies {
-        optional.project "modmenu"
-        optional.project "cloth-config"
-        optional.project "yacl"
-    }
-}
+    modLoaders.add("fabric")
+    modLoaders.add("quilt")
 
-curseforge {
-    if (ENV.CURSEFORGE_TOKEN) {
-        apiKey = ENV.CURSEFORGE_TOKEN
-    }
+    modrinth {
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        projectId = "DIlqwRFH"
 
-    project {
-        id = "440228"
-        releaseType = "release"
-        changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/main/CHANGELOG.md"
+        minecraftVersions.add("1.21.11")
 
-        addGameVersion "1.21.9"
-        addGameVersion "1.21.10"
-        addGameVersion "Fabric"
-        addGameVersion "Quilt"
-        addGameVersion "Java 21"
-
-        mainArtifact(remapJar) {
-            displayName = "v${project.mod_version} (${project.minecraft_version})"
-            relations {
-                optionalDependency "modmenu"
-                optionalDependency "cloth-config"
-                optionalDependency "yacl"
-            }
-        }
-
-        afterEvaluate {
-            uploadTask.dependsOn("remapJar")
-        }
+        optional("modmenu")
+        optional("cloth-config")
+        optional("yacl")
     }
 
-    options {
-        forgeGradleIntegration = false
-        javaVersionAutoDetect = false
+    curseforge {
+        accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+        projectId = "440228"
+
+        clientRequired = true
+        javaVersions.add(JavaVersion.VERSION_21)
+        minecraftVersions.add("1.21.11")
+
+        optional("modmenu")
+        optional("cloth-config")
+        optional("yacl")
     }
 }

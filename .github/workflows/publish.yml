@@ -8,14 +8,14 @@ jobs:
 
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Setup JDK
         uses: actions/setup-java@v5
         with:
           distribution: "temurin"
           java-version: "21"
       - name: Build and publish with Gradle
-        run: ./gradlew build modrinth curseforge --stacktrace
+        run: ./gradlew build publishMods --stacktrace
         env:
           CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}

@@ -22,7 +22,7 @@ public class InGameHudMixin {
         MinecraftClient client = MinecraftClient.getInstance();
         ConfigData config = ConfigManager.getConfig();
 
-        if (!client.options.hudHidden && !client.getDebugHud().shouldShowDebugHud() && config.enabled && config.textAlpha > 3 && FpsDisplayMod.ShowOverlay) {
+        if (!client.options.hudHidden && !client.debugHudEntryList.isF3Enabled() && config.enabled && config.textAlpha > 3 && FpsDisplayMod.ShowOverlay) {
             String text;
             if (!config.advancedStats) {
                 text = ((MinecraftClientAccessor) client).getCurrentFps() + " FPS";

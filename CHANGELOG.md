@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.5.1
+
+* Fix fps not showing when entity hitboxes are visible ([#27](https://github.com/Grayray75/FPS-Display/issues/27))
+
 ## v4.5.0
 
 * Updated to Minecraft v1.21.11

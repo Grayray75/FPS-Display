@@ -8,7 +8,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.resources.Identifier;
 import org.lwjgl.glfw.GLFW;
@@ -26,7 +26,7 @@ public class FpsDisplayMod implements ClientModInitializer {
         ConfigData config = ConfigManager.loadConfig();
 
         KeyMapping.Category keybinCategory = KeyMapping.Category.register(Identifier.fromNamespaceAndPath(MOD_ID, "category"));
-        KeyMapping toggleKeybinding = KeyBindingHelper.registerKeyBinding(new KeyMapping(
+        KeyMapping toggleKeybinding = KeyMappingHelper.registerKeyMapping(new KeyMapping(
             "key.fpsdisplay.toggleOverlay",
             InputConstants.Type.KEYSYM,
             GLFW.GLFW_DONT_CARE,

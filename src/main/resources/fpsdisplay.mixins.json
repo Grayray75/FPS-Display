@@ -5,7 +5,7 @@
     "compatibilityLevel": "JAVA_25",
     "mixins": [],
     "client": [
-        "InGameHudMixin"
+        "GuiMixin"
     ],
     "injectors": {
         "defaultRequire": 1

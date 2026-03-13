@@ -1,5 +1,5 @@
 plugins {
-    id "net.fabricmc.fabric-loom" version "1.14-SNAPSHOT"
+    id "net.fabricmc.fabric-loom" version "1.15-SNAPSHOT"
     id "me.modmuss50.mod-publish-plugin" version "1.1.0"
     id "maven-publish"
 }
@@ -59,6 +59,9 @@ tasks.withType(JavaCompile).configureEach {
 java {
     sourceCompatibility = JavaVersion.VERSION_25
     targetCompatibility = JavaVersion.VERSION_25
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
 
     withSourcesJar()
 }
@@ -105,7 +108,7 @@ publishMods {
         projectId = "440228"
 
         clientRequired = true
-        javaVersions.add(JavaVersion.VERSION_21)
+        javaVersions.add(JavaVersion.VERSION_25)
         minecraftVersions.add("26.1")
 
         optional("modmenu")

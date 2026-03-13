@@ -37,8 +37,8 @@
     ],
     "depends": {
         "fabricloader": ">=0.18.0",
-        "minecraft": ["1.21.11"],
-        "fabric-key-binding-api-v1": "*",
+        "minecraft": ["^26.1-"],
+        "fabric-key-mapping-api-v1": "*",
         "fabric-lifecycle-events-v1": "*"
     },
     "suggests": {

@@ -7,7 +7,7 @@ import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import org.joml.Matrix3x2fStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -16,9 +16,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Gui.class)
-public class InGameHudMixin {
-    @Inject(at = @At("TAIL"), method = "render")
-    public void render(GuiGraphics context, DeltaTracker tickCounter, CallbackInfo ci) {
+public class GuiMixin {
+    @Inject(at = @At("TAIL"), method = "extractRenderState")
+    public void render(GuiGraphicsExtractor context, DeltaTracker deltaTracker, CallbackInfo ci) {
         Minecraft client = Minecraft.getInstance();
         ConfigData config = ConfigManager.getConfig();
 
@@ -54,18 +54,18 @@ public class InGameHudMixin {
     }
 
     @Unique
-    private void renderText(GuiGraphics context, Font textRenderer, String text, int x, int y, int color, float scale, boolean shadowed) {
+    private void renderText(GuiGraphicsExtractor graphics, Font textRenderer, String text, int x, int y, int color, float scale, boolean shadowed) {
         if (scale != 1.0f) {
-            Matrix3x2fStack matrixStack = context.pose();
+            Matrix3x2fStack matrixStack = graphics.pose();
             matrixStack.pushMatrix();
             matrixStack.translate(x, y);
             matrixStack.scale(scale, scale);
             matrixStack.translate(-x, -y);
-            context.drawString(textRenderer, text, x, y, color, shadowed);
+            graphics.text(textRenderer, text, x, y, color, shadowed);
             matrixStack.popMatrix();
         }
         else {
-            context.drawString(textRenderer, text, x, y, color, shadowed);
+            graphics.text(textRenderer, text, x, y, color, shadowed);
         }
     }
 }

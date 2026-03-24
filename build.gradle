@@ -90,7 +90,6 @@ publishMods {
     changelog = "A changelog can be found at https://github.com/Grayray75/FPS-Display/blob/main/CHANGELOG.md"
 
     modLoaders.add("fabric")
-    modLoaders.add("quilt")
 
     modrinth {
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")

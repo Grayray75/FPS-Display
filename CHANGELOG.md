@@ -1,5 +1,12 @@
 # Changelog
 
+## v5.0.0
+
+* Updated to Minecraft v26.1
+
+Note: Cloth Config API support will be added back when it gets updated
+
+
 ## v4.5.1
 
 * Fix fps not showing when entity hitboxes are visible ([#27](https://github.com/Grayray75/FPS-Display/issues/27))

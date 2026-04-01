@@ -1,6 +1,5 @@
 package io.grayray75.mods.fpsdisplay.gui;
 
-/*
 import io.grayray75.mods.fpsdisplay.config.ConfigData;
 import io.grayray75.mods.fpsdisplay.config.ConfigManager;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
@@ -70,4 +69,3 @@ public class ClothOptionScreen {
         return builder.build();
     }
 }
-*/

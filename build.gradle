@@ -17,22 +17,24 @@ repositories {
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    api "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     includeFabricApiModule "fabric-api-base"
     includeFabricApiModule "fabric-key-mapping-api-v1"
     includeFabricApiModule "fabric-lifecycle-events-v1"
 
-    // Provides the latest farbic-api in dev runtime for mod dependencies
+    // Provides farbic-api in dev runtime for dependencies
     localRuntime "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     api("com.terraformersmc:modmenu:${project.modmenu_version}")
 
-    /*api("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
+    api("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
         exclude(group: "net.fabricmc.fabric-api")
-    }*/
+    }
 
-    api("dev.isxander:yet-another-config-lib:${project.yacl_config_version}-fabric")
+    api("dev.isxander:yet-another-config-lib:${project.yacl_config_version}-fabric") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
 }
 
 def includeFabricApiModule(String moduleName) {

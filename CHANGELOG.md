@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.0.1
+
+* Updated to Minecraft v26.1.1
+* Added back Cloth Config API support
+
 ## v5.0.0
 
 * Updated to Minecraft v26.1

@@ -1,6 +1,6 @@
 plugins {
-    id "net.fabricmc.fabric-loom" version "1.15-SNAPSHOT"
-    id "me.modmuss50.mod-publish-plugin" version "1.1.0"
+    id "net.fabricmc.fabric-loom" version "1.16-SNAPSHOT"
+    id "me.modmuss50.mod-publish-plugin" version "2.0.0"
     id "maven-publish"
 }
 
@@ -99,6 +99,7 @@ publishMods {
 
         minecraftVersions.add("26.1")
         minecraftVersions.add("26.1.1")
+        minecraftVersions.add("26.1.2")
 
         optional("modmenu")
         optional("cloth-config")
@@ -109,10 +110,11 @@ publishMods {
         accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
         projectId = "440228"
 
-        clientRequired = true
+        client = true
         javaVersions.add(JavaVersion.VERSION_25)
         minecraftVersions.add("26.1")
         minecraftVersions.add("26.1.1")
+        minecraftVersions.add("26.1.2")
 
         optional("modmenu")
         optional("cloth-config")

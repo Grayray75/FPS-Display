@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.1.0
+
+* Updated to Minecraft v26.2
+
 ## v5.0.1
 
 * Updated to Minecraft v26.1.1
@@ -11,6 +15,7 @@
 
 Note: Cloth Config API support will be added back when it gets updated
 
+---
 
 ## v4.5.1
 
@@ -89,6 +94,7 @@ Note: Cloth Config API support will be added back when it gets updated
 * Added a new settings screen which uses YetAnotherConfigLib
 * Updated to Minecraft v1.20.4
 
+---
 
 ## v3.1.0
 
@@ -110,6 +116,7 @@ The mod now has its own config code and no longer uses autoconfig.
 This means that the mod can be used without Cloth Config installed.
 Cloth Config is still required in order to change the mod settings ingame.
 
+---
 
 ## v1.5.0
 

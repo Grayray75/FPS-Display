@@ -5,7 +5,7 @@
     "compatibilityLevel": "JAVA_25",
     "mixins": [],
     "client": [
-        "GuiMixin"
+        "HudMixin"
     ],
     "injectors": {
         "defaultRequire": 1

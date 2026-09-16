@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.2.0
+
+* Updated to Minecraft v26.3
+
 ## v5.1.0
 
 * Updated to Minecraft v26.2

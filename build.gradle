@@ -97,7 +97,7 @@ publishMods {
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
         projectId = "DIlqwRFH"
 
-        minecraftVersions.add("26.2")
+        minecraftVersions.add("26.3")
 
         optional("modmenu")
         optional("cloth-config")
@@ -110,7 +110,7 @@ publishMods {
 
         client = true
         javaVersions.add(JavaVersion.VERSION_25)
-        minecraftVersions.add("26.2")
+        minecraftVersions.add("26.3")
 
         optional("modmenu")
         optional("cloth-config")
